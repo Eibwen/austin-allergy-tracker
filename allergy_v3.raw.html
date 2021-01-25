@@ -1,0 +1,296 @@
+document.write(`
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="https:////cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<style type="text/css">
+	html {
+		box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
+	body {
+		padding: 0px;
+		margin: 0px;
+	}
+
+	div.peek_a_block {
+		display: none;
+	}
+
+	div.allergy_block {
+		max-width: 875px;
+		width: 100%;
+		
+		display: inline-block;
+		padding-bottom: 0;
+		margin-bottom: .5rem;
+		font-family: Open Sans, sans-serif;
+	}
+
+	p {
+		font-family: Open Sans, sans-serif;
+	}
+
+	h3.allergy_content {
+		font-family: Open Sans, sans-serif;
+		padding: 0;
+		margin: 0;
+	}
+
+	p.allergy_content {
+		font-family: Open Sans, sans-serif;
+		padding: 0;
+		margin: 0;
+	}	
+
+	div.allergy_desc {
+		padding: 0 20px 20px 20px;
+	}
+
+	div.Very_High {
+		background-color: #990000;
+		color: #ffffff;
+	}
+
+	div.High {
+		background-color: #ff0000;
+		color: #ffffff;
+	}
+
+	div.Medium {
+		background-color: #ff6600;
+		color: #ffffff;
+	}
+
+	div.Low {
+		background-color: #006600;
+		color: #ffffff;
+	}
+
+	div.block_title  {
+		font-size: 3vw;
+		font-weight: bold;
+		padding: .5em;
+		display: inline-block;
+		width: 100%;
+	}
+
+	div.block_title * {
+		display: inline-block;
+	}
+
+	div.allergen_value {
+		float:left;
+	}
+
+	div.title_date {
+		font-size: 2vw;
+		font-weight: normal;
+		
+	}
+
+	div.plusecks {
+		width: 4vw;
+		float: right;
+		display: inline-block;
+	}
+
+	div.plusecks img {
+		width: 100%;
+
+	}
+
+	@media only screen and (max-width : 500px) {
+		div.block_title  {
+			font-size: 4vw;
+		}
+
+		div.plusecks {
+			width: 5vw;
+		}
+
+		div.allergy_desc {
+			padding: 0 6vw 6vw 6vw;
+		}
+	}
+
+	@media only screen and (min-width : 999px) {
+		div.block_title  {
+			font-size: 1.5rem;
+		}
+
+		div.plusecks {
+			width: 2rem;
+		}
+
+		div.allergy_desc {
+			padding: 0 .75rem .75rem .75rem;
+		}
+	}
+
+
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+
+var options = { month: 'short', day: 'numeric' };
+
+var aryCedar = [
+{ y: new Date('2020/12/27').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2020/12/28').toLocaleDateString('en-US', options), a: 6383 }, 
+{ y: new Date('2020/12/29').toLocaleDateString('en-US', options), a: 29745 }, 
+{ y: new Date('2020/12/30').toLocaleDateString('en-US', options), a: 20005 }, 
+{ y: new Date('2020/12/31').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/01').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/02').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/03').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 31587 }, 
+{ y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 18163 }, 
+{ y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 15530 }, 
+{ y: new Date('2021/01/08').toLocaleDateString('en-US', options), a: 1020 }, 
+{ y: new Date('2021/01/09').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/10').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/11').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 56 }, 
+{ y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 99 }, 
+{ y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 19347 }, 
+{ y: new Date('2021/01/15').toLocaleDateString('en-US', options), a: 20268 }, 
+{ y: new Date('2021/01/16').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/17').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/18').toLocaleDateString('en-US', options), a: 2303 }, 
+{ y: new Date('2021/01/19').toLocaleDateString('en-US', options), a: 7370 }, 
+{ y: new Date('2021/01/20').toLocaleDateString('en-US', options), a: 823 }, 
+{ y: new Date('2021/01/21').toLocaleDateString('en-US', options), a: 31 }, 
+{ y: new Date('2021/01/22').toLocaleDateString('en-US', options), a: 164 }, 
+{ y: new Date('2021/01/23').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/24').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/25').toLocaleDateString('en-US', options), a: 561 } 
+
+]; 
+
+var aryMold = [
+{ y: new Date('2020/12/27').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2020/12/28').toLocaleDateString('en-US', options), a: 561 }, 
+{ y: new Date('2020/12/29').toLocaleDateString('en-US', options), a: 461 }, 
+{ y: new Date('2020/12/30').toLocaleDateString('en-US', options), a: 429 }, 
+{ y: new Date('2020/12/31').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/01').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/02').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/03').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 416 }, 
+{ y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 716 }, 
+{ y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 4290 }, 
+{ y: new Date('2021/01/08').toLocaleDateString('en-US', options), a: 1161 }, 
+{ y: new Date('2021/01/09').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/10').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/11').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 1267 }, 
+{ y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 864 }, 
+{ y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 761 }, 
+{ y: new Date('2021/01/15').toLocaleDateString('en-US', options), a: 1262 }, 
+{ y: new Date('2021/01/16').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/17').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/18').toLocaleDateString('en-US', options), a: 1363 }, 
+{ y: new Date('2021/01/19').toLocaleDateString('en-US', options), a: 1459 }, 
+{ y: new Date('2021/01/20').toLocaleDateString('en-US', options), a: 2346 }, 
+{ y: new Date('2021/01/21').toLocaleDateString('en-US', options), a: 3461 }, 
+{ y: new Date('2021/01/22').toLocaleDateString('en-US', options), a: 4102 }, 
+{ y: new Date('2021/01/23').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/24').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/25').toLocaleDateString('en-US', options), a: 13622 } 
+
+]; 
+
+
+
+</script>
+
+
+<h3 class="allergy_content">January 25, 2021</h3>
+<p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
+
+<div class="allergy_block">
+	<div class="block_title High">
+		<div class="allergen_value">Cedar - High</div><div class="plusecks"><img id="Cedar" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
+	</div>
+	<div id="Cedar_block" class="peek_a_block">
+		<div id="Cedar"></div>
+		<div class="allergy_desc">Cedar pollen causes allergic reactions in many Central Texans. Counts typically peak in January to early February.</div>
+	</div>
+</div>
+<div class="allergy_block">
+	<div class="block_title High">
+		<div class="allergen_value">Mold - High</div><div class="plusecks"><img id="Mold" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
+	</div>
+	<div id="Mold_block" class="peek_a_block">
+		<div id="Mold"></div>
+		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
+	</div>
+</div>
+
+
+<!-- <p>Find the latest allergy counts for Central Texas, as measured by <a href="https://www.georgetownallergy.com/physician.html#drAmar" target="_blank">Sheila M. Amar, M.D.</a>, and <a href="https://www.georgetownallergy.com/physician.html#drHovanky" target="_blank">Kim T. Hovanky, M.D.</a> of <a href="https://www.georgetownallergy.com/" target="_blank">Allergy & Asthma Center of Georgetown</a>. Whether it is cedar, mold, cottonwood, oak, ragweed, ash, pine, mulberry, elm, poplar, or any other allergen in our area, you can track the latest allergy forecast here.</p> -->
+
+<script type='text/javascript'>//<![CDATA[
+
+	var assetPath = 'https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/';
+
+	function chartToggle(_id, _ary) {
+
+		console.log(_id);
+
+		jQuery( 'div#' + _id + '_block').slideToggle( 400 );
+		jQuery( 'div#' + _id + '_block').css( 'width', '100%' );
+		
+
+
+		imgName = (jQuery( 'img#' + _id ).attr('src')).substr(-8);
+		// icon = assetPath + ( imgName == 'plus.svg' ? 'ecks.svg' : 'plus.svg');
+
+		if ( imgName == 'plus.svg' ) {
+			icon = assetPath + 'ecks.svg';
+			drawChart(_id, _ary);
+		} else {
+			icon = assetPath + 'plus.svg';
+			jQuery( 'div#' + _id ).empty();
+		}
+
+		jQuery( 'img#' + _id ).attr('src', icon);
+
+	}
+
+	function drawChart(_id, _ary) {
+
+		var allergenLabel = _id;
+		allergenLabel = allergenLabel.replace('___', '/');
+		allergenLabel = allergenLabel.replace('_', ' ');
+
+		Morris.Bar({
+			element: jQuery('div#' + _id)[0],
+			data:  _ary ,
+			xkey: 'y',
+			ykeys: ['a'],
+			labels: [allergenLabel]
+		});
+
+	}
+
+//]]> 
+</script>
+
+<style>
+div.morris-hover {
+	text-align: center;
+}
+</style>
+
+
+`);
