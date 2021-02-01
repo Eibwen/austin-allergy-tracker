@@ -142,9 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryCedar = [
-{ y: new Date('2020/12/31').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/02').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/03').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 31587 }, 
 { y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
@@ -171,14 +168,14 @@ var aryCedar = [
 { y: new Date('2021/01/26').toLocaleDateString('en-US', options), a: 1415 }, 
 { y: new Date('2021/01/27').toLocaleDateString('en-US', options), a: 394 }, 
 { y: new Date('2021/01/28').toLocaleDateString('en-US', options), a: 197 }, 
-{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 12 } 
+{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 12 }, 
+{ y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 165 } 
 
 ]; 
 
 var aryElm = [
-{ y: new Date('2020/12/31').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/02').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/03').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
@@ -205,14 +202,14 @@ var aryElm = [
 { y: new Date('2021/01/26').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/27').toLocaleDateString('en-US', options), a: 68 }, 
 { y: new Date('2021/01/28').toLocaleDateString('en-US', options), a: 3 }, 
-{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 10 } 
+{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 10 }, 
+{ y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 2 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2020/12/31').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/02').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/03').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 416 }, 
 { y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
@@ -239,7 +236,10 @@ var aryMold = [
 { y: new Date('2021/01/26').toLocaleDateString('en-US', options), a: 6671 }, 
 { y: new Date('2021/01/27').toLocaleDateString('en-US', options), a: 3138 }, 
 { y: new Date('2021/01/28').toLocaleDateString('en-US', options), a: 4083 }, 
-{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 1262 } 
+{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 1262 }, 
+{ y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 2468 } 
 
 ]; 
 
@@ -248,12 +248,12 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content">January 29, 2021</h3>
+<h3 class="allergy_content">February 1, 2021</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Cedar - Low</div><div class="plusecks"><img id="Cedar" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
+	<div class="block_title High">
+		<div class="allergen_value">Cedar - High</div><div class="plusecks"><img id="Cedar" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
 	</div>
 	<div id="Cedar_block" class="peek_a_block">
 		<div id="Cedar"></div>
