@@ -12,7 +12,7 @@ async function processLineByLine(filename) {
   // Note: we use the crlfDelay option to recognize all instances of CR LF
   // ('\r\n') in input.txt as a single line break.
 
-  const ignorePattern = new RegExp(/^(\W|\];)$/);
+  const ignorePattern = new RegExp(/^(\W*|\];\W*)$/);
   const dataPattern = new RegExp(/^{ y: new Date\(\'(.+?)\'\).toLocaleDateString\(\'en-US\', options\), a: (\d+) },?\W?$/);
 
   const allerginData = {};
@@ -20,9 +20,15 @@ async function processLineByLine(filename) {
   let allerginType = '';
   for await (const line of rl) {
     if (line.startsWith('var ary')) {
-        allerginType = line.match(/var ary(.+)\b/)[1];
-        console.log(`INFO: allergin type set: ${allerginType}`);
-        continue;
+      // Old data
+      if (allerginType) {
+        console.log(`INFO: For: ${allerginType} got ${allerginData[allerginType].length} records`);
+      }
+
+      // New data
+      allerginType = line.match(/var ary(.+)\b/)[1];
+      // console.log(`INFO: allergin type set: ${allerginType}`);
+      continue;
     }
 
     if (ignorePattern.test(line)) {
@@ -47,7 +53,9 @@ async function processLineByLine(filename) {
       const filename = `alergin.${allerginProp}.json`;
       const valuesArray = allerginData[allerginProp];
 
-      fs.writeFile(filename, JSON.stringify(valuesArray, null, 2));
+      fs.writeFile(filename, JSON.stringify(valuesArray, null, 2), function(err, result) {
+        if(err) console.log('error', err);
+      });
   }
 }
 
