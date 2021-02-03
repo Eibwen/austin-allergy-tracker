@@ -11,18 +11,21 @@ jobs:
   scheduled:
     name: Allergy Job
     runs-on: ubuntu-latest
+    env:
+      HTML_NAME: allergy_v3.raw.html
+      JS_ARRAYS_NAME: allergy_v3.arrays.js
     steps:
     - name: Checkout
       uses: actions/checkout@master
       
     - name: Fetch latest data
       run: |-
-        curl https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/allergy_v3.5.js?v=4 > allergy_v3.raw.html
+        curl https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/allergy_v3.5.js?v=4 > $HTML_NAME
         
     - name: Process data
       run: |-
         # grep -Poz '(var ary[^;]+?;)' allergy_v3.raw.html
-        awk '/var ary/,/;/' allergy_v3.raw.html > allergy_v3.arrays.js
+        awk '/var ary/,/;/' $HTML_NAME > $JS_ARRAYS_NAME
       continue-on-error: true
       
         
