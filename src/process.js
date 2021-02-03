@@ -18,7 +18,7 @@ async function processLineByLine(filename) {
   const allerginData = {};
 
   let allerginType = '';
-  for (const line of rl) {
+  for await (const line of rl) {
     if (line.startsWith('var ary')) {
         allerginType = line.match(/var ary(.+)\b/)[1];
         console.log(`INFO: allergin type set: ${allerginType}`);
