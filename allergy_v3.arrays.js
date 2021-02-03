@@ -1,5 +1,4 @@
 var aryCedar = [
-{ y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 31587 }, 
 { y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 18163 }, 
 { y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 15530 }, 
@@ -28,11 +27,11 @@ var aryCedar = [
 { y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 165 }, 
-{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 33 } 
+{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 33 }, 
+{ y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 66 } 
 
 ]; 
 var aryElm = [
-{ y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 0 }, 
@@ -61,44 +60,11 @@ var aryElm = [
 { y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 2 } 
-
-]; 
-var aryHackberry = [
-{ y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/08').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/09').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/11').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/15').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/16').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/17').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/18').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/19').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/20').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/21').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/22').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/23').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/24').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/25').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/27').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/28').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 1 } 
+{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 1 } 
 
 ]; 
 var aryMold = [
-{ y: new Date('2021/01/04').toLocaleDateString('en-US', options), a: 416 }, 
 { y: new Date('2021/01/05').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 716 }, 
 { y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 4290 }, 
@@ -127,6 +93,7 @@ var aryMold = [
 { y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 2468 }, 
-{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 1511 } 
+{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 1511 }, 
+{ y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 923 } 
 
 ]; 
