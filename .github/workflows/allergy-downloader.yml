@@ -14,9 +14,18 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+      
     - name: Fetch latest data
       run: |-
         curl https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/allergy_v3.5.js?v=4 > allergy_v3.raw.html
+        
+    - name: Process data
+      run: |-
+        # grep -Poz '(var ary[^;]+?;)' allergy_v3.raw.html
+        awk '/var ary/,/;/' allergy_v3.raw.html > allergy_v3.arrays.js
+      continue-on-error: true
+      
+        
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
