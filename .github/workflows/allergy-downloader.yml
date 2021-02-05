@@ -53,5 +53,5 @@ jobs:
         git config user.email "actions@users.noreply.github.com"
         git add -A
         timestamp=$(date +"%Y-%m-%d %T")
-        git commit -m "Latest data: ${timestamp}" || exit 0
+        git commit -m "Latest data: ${timestamp} (from: $GITHUB_EVENT_NAME)" || exit 0
         git push
