@@ -39,8 +39,8 @@ async function processLineByLine(filename) {
     let dataLine = dataPattern.exec(line);
     if (dataLine != null) {
         console.log(`DEBUG: add data`)
-        allerginData[allerginType] = allerginData[allerginType] || [];
-        allerginData[allerginType].push({ date: dataLine[1], value: dataLine[2] });
+        allerginData[allerginType] = allerginData[allerginType] || {};
+        allerginData[allerginType][dataLine[1]] = dataLine[2];
     }
     else {
         console.log(`WARNING: Unmatched line: '${line}'`)
@@ -51,10 +51,22 @@ async function processLineByLine(filename) {
   {
       console.log(`INFO: Writing ${allerginProp} data to file`)
       const filename = `alergin.${allerginProp}.json`;
-      const valuesArray = allerginData[allerginProp];
+      const newData = allerginData[allerginProp];
 
-      fs.writeFile(filename, JSON.stringify(valuesArray, null, 2), function(err, result) {
-        if(err) console.log('error', err);
+      fs.readFile(filename, (err, data) => {
+        if (err) {
+          // Ignore error
+          data = "{}";
+        }
+        // TODO consider parsing this as a Map?
+        const previousData = JSON.parse(data);
+
+        // Combine valuesDictionary and previousData
+        const combinedData = {...previousData, ...newData};
+
+        fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err, result) {
+          if(err) console.log('error', err);
+        });
       });
   }
 }
