@@ -55,3 +55,7 @@ jobs:
         timestamp=$(date +"%Y-%m-%d %T")
         git commit -m "Latest data: ${timestamp}" || exit 0
         git push
+
+    - name: Print GitHub event action
+      run: |-
+        echo "${{ github.event.action }}"
