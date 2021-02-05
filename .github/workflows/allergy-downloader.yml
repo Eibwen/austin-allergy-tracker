@@ -62,3 +62,4 @@ jobs:
         echo "${{ github.event }}"
         echo "${{ github }}"
         echo "${{ github.action }}"
+        echo "$GITHUB_EVENT_NAME"
