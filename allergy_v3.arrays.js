@@ -1,5 +1,4 @@
 var aryCedar = [
-{ y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 18163 }, 
 { y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 15530 }, 
 { y: new Date('2021/01/08').toLocaleDateString('en-US', options), a: 1020 }, 
 { y: new Date('2021/01/09').toLocaleDateString('en-US', options), a: 0 }, 
@@ -28,11 +27,11 @@ var aryCedar = [
 { y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 165 }, 
 { y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 33 }, 
 { y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 66 }, 
-{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 197 } 
+{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 197 }, 
+{ y: new Date('2021/02/05').toLocaleDateString('en-US', options), a: 691 } 
 
 ]; 
 var aryElm = [
-{ y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/08').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/09').toLocaleDateString('en-US', options), a: 0 }, 
@@ -61,11 +60,11 @@ var aryElm = [
 { y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 2 }, 
 { y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 2 }, 
 { y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 4 } 
+{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/02/05').toLocaleDateString('en-US', options), a: 4 } 
 
 ]; 
 var aryMold = [
-{ y: new Date('2021/01/06').toLocaleDateString('en-US', options), a: 716 }, 
 { y: new Date('2021/01/07').toLocaleDateString('en-US', options), a: 4290 }, 
 { y: new Date('2021/01/08').toLocaleDateString('en-US', options), a: 1161 }, 
 { y: new Date('2021/01/09').toLocaleDateString('en-US', options), a: 0 }, 
@@ -94,6 +93,7 @@ var aryMold = [
 { y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 2468 }, 
 { y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 1511 }, 
 { y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 923 }, 
-{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 2685 } 
+{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 2685 }, 
+{ y: new Date('2021/02/05').toLocaleDateString('en-US', options), a: 1035 } 
 
 ]; 
