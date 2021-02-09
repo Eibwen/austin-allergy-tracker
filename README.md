@@ -4,12 +4,9 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-### Cedar
-2021/02/08: **89**
-### Elm
-2021/02/08: **2**
-### Mold
-2021/02/08: **1228**
+- **Cedar: 89** (2021/02/08)
+- **Elm: 2** (2021/02/08)
+- **Mold: 1228** (2021/02/08)
 <!-- END INJECT FORECAST -->
 
 ## Technique
