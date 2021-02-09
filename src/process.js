@@ -93,12 +93,11 @@ function updateReadme(allerginData) {
     let allergyRenderLines = [''];
     for (const allerginProp in allerginData)
     {
-      allergyRenderLines.push(`### ${allerginProp}`);
       const data = allerginData[allerginProp];
       const keys = Object.keys(data);
       const newestDateLabel = keys[keys.length - 1];
       const newestAllergenValue = data[newestDateLabel];
-      allergyRenderLines.push(`${newestDateLabel}: **${newestAllergenValue}**`);
+      allergyRenderLines.push(`- **${allerginProp}: ${newestAllergenValue}** (${newestDateLabel})`);
     }
     allergyRenderLines.push('');
 
