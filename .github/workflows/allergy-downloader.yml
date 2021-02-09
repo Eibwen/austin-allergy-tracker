@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HTML_NAME: allergy_v3.raw.html
-      JS_ARRAYS_NAME: allergy_v3.arrays.js
+      JS_ARRAYS_NAME: /tmp/allergy_v3.arrays.js
     steps:
     - name: Checkout
       uses: actions/checkout@master
