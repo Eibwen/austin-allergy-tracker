@@ -1,5 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
+const {EOL} = require('os');
 
 async function processLineByLine(filename) {
   console.log(`INFO: Opening ${filename}`)
@@ -22,7 +23,7 @@ async function processLineByLine(filename) {
     if (line.startsWith('var ary')) {
       // Old data
       if (allerginType) {
-        console.log(`INFO: For: ${allerginType} got ${allerginData[allerginType].length} records`);
+        console.log(`INFO: For: ${allerginType} got ${Object.keys(allerginData[allerginType]).length} records`);
       }
 
       // New data
@@ -69,6 +70,47 @@ async function processLineByLine(filename) {
       });
     });
   }
+
+
+  console.log('INFO: updating README.md')
+  updateReadme(allerginData);
 }
+
+
+function wrapWithInjectionSpot(label, str) {
+  return `<!-- ${label} -->${str}<!-- END ${label} -->`;
+}
+function updateReadme(allerginData) {
+  const filename = 'README.md';
+  const injectionLabel = 'INJECT FORECAST';
+
+  fs.readFile(filename, 'utf8', (err, data) => {
+    if (err) {
+      console.log('FATAL: Failure reading file');
+      throw err;
+    }
+
+    let allergyRenderLines = [''];
+    for (const allerginProp in allerginData)
+    {
+      allergyRenderLines.push(`### ${allerginProp}`);
+      const data = allerginData[allerginProp];
+      const keys = Object.keys(data);
+      const newestDateLabel = keys[keys.length - 1];
+      const newestAllergenValue = data[newestDateLabel];
+      allergyRenderLines.push(`${newestDateLabel}: **${newestAllergenValue}**`);
+    }
+    allergyRenderLines.push('');
+
+    const allergyDataRendered = allergyRenderLines.join(EOL);
+    data = data.replace(new RegExp(wrapWithInjectionSpot(injectionLabel, '.+?'), "s"),
+                        wrapWithInjectionSpot(injectionLabel, allergyDataRendered));
+
+    fs.writeFile(filename, data, function(err, result) {
+      if(err) console.log('error', err);
+    });
+  });
+}
+
 
 processLineByLine(process.env.JS_ARRAYS_NAME);

@@ -1,6 +1,11 @@
 # Allergy Tracker
 
-Keep history of allergies in Austin, TX using github Actions
+Keep history of allergies in Austin, TX using github Actions (sourced from KXAN's allergy tracker)
+
+## Current forecast
+<!-- INJECT FORECAST -->
+
+<!-- END INJECT FORECAST -->
 
 ## Technique
 
