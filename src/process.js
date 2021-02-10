@@ -84,7 +84,7 @@ function updateReadme(allerginData) {
   const filename = 'README.md';
   const injectionLabel = 'INJECT FORECAST';
 
-  fs.readFile(filename, 'utf8', (err, data) => {
+  fs.readFile(filename, 'utf8', (err, readmeContent) => {
     if (err) {
       console.log('FATAL: Failure reading file');
       throw err;
@@ -97,15 +97,20 @@ function updateReadme(allerginData) {
       const keys = Object.keys(data);
       const newestDateLabel = keys[keys.length - 1];
       const newestAllergenValue = data[newestDateLabel];
-      allergyRenderLines.push(`- **${allerginProp}: ${newestAllergenValue}** (${newestDateLabel})`);
+
+      // Splice off recent ranges, and get allergen counts for those days
+      const monthData = keys.splice(-30).map(x => data[x]);
+      const weekData = keys.splice(-7).map(x => data[x]);
+
+      allergyRenderLines.push(`- **${allerginProp}: ${newestAllergenValue}** (${newestDateLabel})  [week high: ${Math.max(...weekData)}, month: ${Math.max(...monthData)}]`);
     }
     allergyRenderLines.push('');
 
     const allergyDataRendered = allergyRenderLines.join(EOL);
-    data = data.replace(new RegExp(wrapWithInjectionSpot(injectionLabel, '.+?'), "s"),
+    readmeContent = readmeContent.replace(new RegExp(wrapWithInjectionSpot(injectionLabel, '.+?'), "s"),
                         wrapWithInjectionSpot(injectionLabel, allergyDataRendered));
 
-    fs.writeFile(filename, data, function(err, result) {
+    fs.writeFile(filename, readmeContent, function(err, result) {
       if(err) console.log('error', err);
     });
   });
