@@ -98,9 +98,9 @@ function updateReadme(allerginData) {
       const newestDateLabel = keys[keys.length - 1];
       const newestAllergenValue = data[newestDateLabel];
 
-      // Splice off recent ranges, and get allergen counts for those days
-      const monthData = keys.splice(-30).map(x => data[x]);
-      const weekData = keys.splice(-7).map(x => data[x]);
+      // Slice off recent ranges, and get allergen counts for those days
+      const monthData = keys.slice(-30).map(x => data[x]);
+      const weekData = keys.slice(-7).map(x => data[x]);
 
       allergyRenderLines.push(`- **${allerginProp}: ${newestAllergenValue}** (${newestDateLabel})  [week high: ${Math.max(...weekData)}, month: ${Math.max(...monthData)}]`);
     }
