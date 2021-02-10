@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryCedar = [
-{ y: new Date('2021/01/11').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 56 }, 
 { y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 99 }, 
 { y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 19347 }, 
@@ -171,12 +170,12 @@ var aryCedar = [
 { y: new Date('2021/02/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/07').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/08').toLocaleDateString('en-US', options), a: 89 }, 
-{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 12 } 
+{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 12 }, 
+{ y: new Date('2021/02/10').toLocaleDateString('en-US', options), a: 66 } 
 
 ]; 
 
 var aryElm = [
-{ y: new Date('2021/01/11').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 0 }, 
@@ -205,12 +204,12 @@ var aryElm = [
 { y: new Date('2021/02/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/07').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/08').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 10 } 
+{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 10 }, 
+{ y: new Date('2021/02/10').toLocaleDateString('en-US', options), a: 59 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2021/01/11').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 1267 }, 
 { y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 864 }, 
 { y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 761 }, 
@@ -239,7 +238,42 @@ var aryMold = [
 { y: new Date('2021/02/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/07').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/02/08').toLocaleDateString('en-US', options), a: 1228 }, 
-{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 833 } 
+{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 833 }, 
+{ y: new Date('2021/02/10').toLocaleDateString('en-US', options), a: 761 } 
+
+]; 
+
+var aryOther = [
+{ y: new Date('2021/01/12').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/13').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/14').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/15').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/16').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/17').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/18').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/19').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/20').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/21').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/22').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/23').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/24').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/25').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/26').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/27').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/28').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/29').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/30').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/01/31').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/01').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/02').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/03').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/04').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/05').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/06').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/07').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/08').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/09').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/02/10').toLocaleDateString('en-US', options), a: 2 } 
 
 ]; 
 
@@ -248,12 +282,12 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content">February 9, 2021</h3>
+<h3 class="allergy_content">February 10, 2021</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Cedar - Low</div><div class="plusecks"><img id="Cedar" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
+	<div class="block_title Medium">
+		<div class="allergen_value">Cedar - Medium</div><div class="plusecks"><img id="Cedar" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
 	</div>
 	<div id="Cedar_block" class="peek_a_block">
 		<div id="Cedar"></div>
@@ -261,8 +295,8 @@ var aryMold = [
 	</div>
 </div>
 <div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Elm - Low</div><div class="plusecks"><img id="Elm" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Elm', aryElm);"  /></div>
+	<div class="block_title Medium">
+		<div class="allergen_value">Elm - Medium</div><div class="plusecks"><img id="Elm" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Elm', aryElm);"  /></div>
 	</div>
 	<div id="Elm_block" class="peek_a_block">
 		<div id="Elm"></div>
@@ -276,6 +310,15 @@ var aryMold = [
 	<div id="Mold_block" class="peek_a_block">
 		<div id="Mold"></div>
 		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
+	</div>
+</div>
+<div class="allergy_block">
+	<div class="block_title Low">
+		<div class="allergen_value">Other - Low</div><div class="plusecks"><img id="Other" src="https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/plus.svg" onclick="chartToggle('Other', aryOther);"  /></div>
+	</div>
+	<div id="Other_block" class="peek_a_block">
+		<div id="Other"></div>
+		<div class="allergy_desc">No description</div>
 	</div>
 </div>
 
