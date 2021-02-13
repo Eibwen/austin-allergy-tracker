@@ -1,6 +1,7 @@
-const fs = require('fs');
-const readline = require('readline');
-const {EOL} = require('os');
+import fs = require('fs')
+import readline = require('readline')
+import {EOL} from 'os'
+import QuickChart = require('quickchart-js')
 
 async function processLineByLine(filename) {
   console.log(`INFO: Opening ${filename}`)
@@ -55,17 +56,14 @@ async function processLineByLine(filename) {
     const newData = allerginData[allerginProp];
 
     fs.readFile(filename, (err, data) => {
-      if (err) {
-        // Ignore error
-        data = "{}";
-      }
       // TODO consider parsing this as a Map?
-      const previousData = JSON.parse(data);
+      const previousData = (err) ? {} : data.toJSON;
+
 
       // Combine valuesDictionary and previousData
       const combinedData = {...previousData, ...newData};
 
-      fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err, result) {
+      fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
         if(err) console.log('error', err);
       });
     });
@@ -110,7 +108,7 @@ function updateReadme(allerginData) {
     readmeContent = readmeContent.replace(new RegExp(wrapWithInjectionSpot(injectionLabel, '.+?'), "s"),
                         wrapWithInjectionSpot(injectionLabel, allergyDataRendered));
 
-    fs.writeFile(filename, readmeContent, function(err, result) {
+    fs.writeFile(filename, readmeContent, function(err) {
       if(err) console.log('error', err);
     });
   });
