@@ -1,8 +1,13 @@
-const fs = require('fs');
-const readline = require('readline');
-const {EOL} = require('os');
+import fs = require('fs')
+import readline = require('readline')
+import {EOL} from 'os'
+import QuickChart = require('quickchart-js')
 
-async function processLineByLine(filename) {
+type Filepath = string
+type DataSeries = { [key: string]: number; }
+type DataCollection = { [allergen: string]: DataSeries }
+
+async function processLineByLine(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`)
   const fileStream = fs.createReadStream(filename);
 
@@ -16,19 +21,19 @@ async function processLineByLine(filename) {
   const ignorePattern = new RegExp(/^(\W*|\];\W*)$/);
   const dataPattern = new RegExp(/^{ y: new Date\(\'(.+?)\'\).toLocaleDateString\(\'en-US\', options\), a: (\d+) },?\W?$/);
 
-  const allerginData = {};
+  const allergenData: DataCollection = {};
 
-  let allerginType = '';
+  let allergenType = '';
   for await (const line of rl) {
     if (line.startsWith('var ary')) {
       // Old data
-      if (allerginType) {
-        console.log(`INFO: For: ${allerginType} got ${Object.keys(allerginData[allerginType]).length} records`);
+      if (allergenType) {
+        console.log(`INFO: For: ${allergenType} got ${Object.keys(allergenData[allergenType]).length} records`);
       }
 
       // New data
-      allerginType = line.match(/var ary(.+)\b/)[1];
-      // console.log(`INFO: allergin type set: ${allerginType}`);
+      allergenType = line.match(/var ary(.+)\b/)[1];
+      // console.log(`INFO: allergen type set: ${allergenType}`);
       continue;
     }
 
@@ -40,32 +45,29 @@ async function processLineByLine(filename) {
     let dataLine = dataPattern.exec(line);
     if (dataLine != null) {
       console.log(`DEBUG: add data`)
-      allerginData[allerginType] = allerginData[allerginType] || {};
-      allerginData[allerginType][dataLine[1]] = dataLine[2];
+      allergenData[allergenType] = allergenData[allergenType] || {};
+      allergenData[allergenType][dataLine[1]] = +dataLine[2];
     }
     else {
       console.log(`WARNING: Unmatched line: '${line}'`)
     }
   }
 
-  for (const allerginProp in allerginData)
+  for (const allergenProp in allergenData)
   {
-    console.log(`INFO: Writing ${allerginProp} data to file`)
-    const filename = `alergin.${allerginProp}.json`;
-    const newData = allerginData[allerginProp];
+    console.log(`INFO: Writing ${allergenProp} data to file`)
+    const filename = `alergin.${allergenProp}.json`;
+    const newData = allergenData[allergenProp];
 
     fs.readFile(filename, (err, data) => {
-      if (err) {
-        // Ignore error
-        data = "{}";
-      }
       // TODO consider parsing this as a Map?
-      const previousData = JSON.parse(data);
+      const previousData: any = (err) ? {} : JSON.parse(data.toString());
+
 
       // Combine valuesDictionary and previousData
-      const combinedData = {...previousData, ...newData};
+      const combinedData: DataSeries = {...previousData, ...newData};
 
-      fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err, result) {
+      fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
         if(err) console.log('error', err);
       });
     });
@@ -73,14 +75,14 @@ async function processLineByLine(filename) {
 
 
   console.log('INFO: updating README.md')
-  updateReadme(allerginData);
+  updateReadme(allergenData);
 }
 
 
-function wrapWithInjectionSpot(label, str) {
+function wrapWithInjectionSpot(label: string, str: string) {
   return `<!-- ${label} -->${str}<!-- END ${label} -->`;
 }
-function updateReadme(allerginData) {
+function updateReadme(allergenData: DataCollection) {
   const filename = 'README.md';
   const injectionLabel = 'INJECT FORECAST';
 
@@ -91,9 +93,9 @@ function updateReadme(allerginData) {
     }
 
     let allergyRenderLines = [''];
-    for (const allerginProp in allerginData)
+    for (const allergenProp in allergenData)
     {
-      const data = allerginData[allerginProp];
+      const data = allergenData[allergenProp];
       const keys = Object.keys(data);
       const newestDateLabel = keys[keys.length - 1];
       const newestAllergenValue = data[newestDateLabel];
@@ -102,7 +104,7 @@ function updateReadme(allerginData) {
       const monthData = keys.slice(-30).map(x => data[x]);
       const weekData = keys.slice(-7).map(x => data[x]);
 
-      allergyRenderLines.push(`- **${allerginProp}: ${newestAllergenValue}** (${newestDateLabel})  [week high: ${Math.max(...weekData)}, month: ${Math.max(...monthData)}]`);
+      allergyRenderLines.push(`- **${allergenProp}: ${newestAllergenValue}** (${newestDateLabel})  [week high: ${Math.max(...weekData)}, month: ${Math.max(...monthData)}]`);
     }
     allergyRenderLines.push('');
 
@@ -110,7 +112,7 @@ function updateReadme(allerginData) {
     readmeContent = readmeContent.replace(new RegExp(wrapWithInjectionSpot(injectionLabel, '.+?'), "s"),
                         wrapWithInjectionSpot(injectionLabel, allergyDataRendered));
 
-    fs.writeFile(filename, readmeContent, function(err, result) {
+    fs.writeFile(filename, readmeContent, function(err) {
       if(err) console.log('error', err);
     });
   });

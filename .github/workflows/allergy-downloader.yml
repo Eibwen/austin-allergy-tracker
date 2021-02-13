@@ -17,17 +17,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-      
+
     - name: Fetch latest data
       run: |-
         curl https://media.kxan.com/nxs-kxantv-media-us-east-1/oembed/wx_embed/allergy/allergy_v3.5.js?v=4 > $HTML_NAME
-        
+
     - name: Process data
       run: |-
         # grep -Poz '(var ary[^;]+?;)' allergy_v3.raw.html
         awk '/var ary/,/;/' $HTML_NAME > $JS_ARRAYS_NAME
       continue-on-error: true
-      
+
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.4
       with:
@@ -45,8 +45,8 @@ jobs:
         scope: # optional
         # Used to pull node distributions from node-versions.  Since there's a default, this is typically not supplied by the user.
         token: # optional, default is ${{ github.token }}
-    - run: node ./src/process.js
-        
+    - run: (npm install && npm run start)
+
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
