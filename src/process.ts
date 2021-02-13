@@ -61,7 +61,7 @@ async function processLineByLine(filename: Filepath) {
 
     fs.readFile(filename, (err, data) => {
       // TODO consider parsing this as a Map?
-      const previousData: any = (err) ? {} : data.toJSON();
+      const previousData: any = (err) ? {} : JSON.parse(data.toString());
 
 
       // Combine valuesDictionary and previousData
