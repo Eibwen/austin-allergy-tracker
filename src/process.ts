@@ -3,7 +3,11 @@ import readline = require('readline')
 import {EOL} from 'os'
 import QuickChart = require('quickchart-js')
 
-async function processLineByLine(filename) {
+type Filepath = string
+type DataSeries = { [key: string]: number; }
+type DataCollection = { [allergen: string]: DataSeries }
+
+async function processLineByLine(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`)
   const fileStream = fs.createReadStream(filename);
 
@@ -17,7 +21,7 @@ async function processLineByLine(filename) {
   const ignorePattern = new RegExp(/^(\W*|\];\W*)$/);
   const dataPattern = new RegExp(/^{ y: new Date\(\'(.+?)\'\).toLocaleDateString\(\'en-US\', options\), a: (\d+) },?\W?$/);
 
-  const allergenData = {};
+  const allergenData: DataCollection = {};
 
   let allergenType = '';
   for await (const line of rl) {
@@ -42,7 +46,7 @@ async function processLineByLine(filename) {
     if (dataLine != null) {
       console.log(`DEBUG: add data`)
       allergenData[allergenType] = allergenData[allergenType] || {};
-      allergenData[allergenType][dataLine[1]] = dataLine[2];
+      allergenData[allergenType][dataLine[1]] = +dataLine[2];
     }
     else {
       console.log(`WARNING: Unmatched line: '${line}'`)
@@ -57,11 +61,11 @@ async function processLineByLine(filename) {
 
     fs.readFile(filename, (err, data) => {
       // TODO consider parsing this as a Map?
-      const previousData = (err) ? {} : data.toJSON;
+      const previousData: any = (err) ? {} : data.toJSON();
 
 
       // Combine valuesDictionary and previousData
-      const combinedData = {...previousData, ...newData};
+      const combinedData: DataSeries = {...previousData, ...newData};
 
       fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
         if(err) console.log('error', err);
@@ -75,10 +79,10 @@ async function processLineByLine(filename) {
 }
 
 
-function wrapWithInjectionSpot(label, str) {
+function wrapWithInjectionSpot(label: string, str: string) {
   return `<!-- ${label} -->${str}<!-- END ${label} -->`;
 }
-function updateReadme(allergenData) {
+function updateReadme(allergenData: DataCollection) {
   const filename = 'README.md';
   const injectionLabel = 'INJECT FORECAST';
 
