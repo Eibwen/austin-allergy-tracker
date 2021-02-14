@@ -106,6 +106,11 @@ function updateReadme(allergenData: DataCollection) {
 
       allergyRenderLines.push(`- **${allergenProp}: ${newestAllergenValue}** (${newestDateLabel})  [week high: ${Math.max(...weekData)}, month: ${Math.max(...monthData)}]`);
     }
+
+    // Insert chart as well
+    const chartUrl = GetChartImageUrl(allergenData);
+    allergyRenderLines.push(`![Week Chart](${chartUrl})`);
+
     allergyRenderLines.push('');
 
     const allergyDataRendered = allergyRenderLines.join(EOL);
@@ -116,6 +121,32 @@ function updateReadme(allergenData: DataCollection) {
       if(err) console.log('error', err);
     });
   });
+}
+
+function GetChartImageUrl(allergenData: DataCollection) {
+  const dataSets = [];
+  let keys = [];
+  for (const allergenProp in allergenData) {
+    const data = allergenData[allergenProp];
+    keys = Object.keys(data).slice(-7);
+    const weekData = keys.map(x => data[x]);
+    dataSets.push({ label: allergenProp, data: weekData})
+  }
+
+  // TODO set width
+  // TODO would be nice to have each on different Y-axis, but that isn't viable
+  // TODO just remove this???
+
+  const myChart = new QuickChart();
+  myChart.setConfig({
+    type: 'line',
+    data: {
+      labels: keys,
+      datasets: dataSets
+    },
+  });
+
+  return myChart.getUrl();
 }
 
 
