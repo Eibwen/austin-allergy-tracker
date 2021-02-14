@@ -1,7 +1,6 @@
 import fs = require('fs')
 import readline = require('readline')
 import {EOL} from 'os'
-import QuickChart = require('quickchart-js')
 
 type Filepath = string
 type DataSeries = { [key: string]: number; }
