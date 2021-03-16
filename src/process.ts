@@ -58,7 +58,10 @@ async function processLineByLine(filename: Filepath) {
     const filename = `alergin.${allergenProp}.json`;
     const newData = allergenData[allergenProp];
 
+    console.log(`INFO: Reading previous data ${filename}`)
     fs.readFile(filename, (err, data) => {
+      if(err) console.log('ERROR', err);
+
       // TODO consider parsing this as a Map?
       const previousData: any = (err) ? {} : JSON.parse(data.toString());
 
