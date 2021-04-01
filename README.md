@@ -4,13 +4,13 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Oak: 1820** (2021/03/31)  [week high: 2007, month: 2007]
-- **Ash: 30** (2021/03/31)  [week high: 66, month: 66]
-- **Grass: 5** (2021/03/31)  [week high: 5, month: 5]
-- **Hackberry: 25** (2021/03/31)  [week high: 90, month: 428]
-- **Mulberry: 84** (2021/03/31)  [week high: 84, month: 84]
-- **Mold: 3874** (2021/03/31)  [week high: 21400, month: 21400]
-- **Other: 4** (2021/03/31)  [week high: 10, month: 22]
+- **Oak: 1610** (2021/04/01)  [week high: 2007, month: 2007]
+- **Mulberry: 98** (2021/04/01)  [week high: 98, month: 98]
+- **Ash: 60** (2021/04/01)  [week high: 66, month: 66]
+- **Hackberry: 34** (2021/04/01)  [week high: 90, month: 428]
+- **Other: 30** (2021/04/01)  [week high: 30, month: 30]
+- **Grass: 3** (2021/04/01)  [week high: 5, month: 5]
+- **Mold: 3910** (2021/04/01)  [week high: 21400, month: 21400]
 <!-- END INJECT FORECAST -->
 
 ## Technique
