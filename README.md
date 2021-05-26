@@ -4,7 +4,9 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Mold: 15661** (2021/05/25)  [week high: 34249, month: 34249]
+- **Mold: 17530** (2021/05/26)  [week high: 17530, month: 34249]
+- **Grass: 3** (2021/05/26)  [week high: 5, month: 140]
+- **Other: 3** (2021/05/26)  [week high: 3, month: 10]
 <!-- END INJECT FORECAST -->
 
 ## Technique
