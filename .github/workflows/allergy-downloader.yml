@@ -20,7 +20,7 @@ jobs:
 
     - name: Fetch latest data
       run: |-
-        curl https://web.archive.org/web/20210727023246js_/https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_v3.5.js?v=4 > $HTML_NAME
+        curl https://web.archive.org/web/20210829053752js_/https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_v3.5.js?v=4 > $HTML_NAME
 
     - name: Process data
       run: |-
