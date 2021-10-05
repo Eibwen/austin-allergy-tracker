@@ -4,10 +4,11 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Fall_Elm: 526** (2021/10/04)  [week high: 559, month: 559]
-- **Mold: 15103** (2021/10/04)  [week high: 15103, month: 15103]
-- **Ragweed: 132** (2021/10/04)  [week high: 201, month: 363]
-- **Other: 4** (2021/10/04)  [week high: 4, month: 4]
+- **Fall_Elm: 306** (2021/10/05)  [week high: 559, month: 559]
+- **Ragweed: 102** (2021/10/05)  [week high: 201, month: 363]
+- **Mold: 7601** (2021/10/05)  [week high: 15103, month: 15103]
+- **Grass: 1** (2021/10/05)  [week high: 1, month: 7]
+- **Weeds: 3** (2021/10/05)  [week high: 3, month: 6]
 <!-- END INJECT FORECAST -->
 
 ## Technique
