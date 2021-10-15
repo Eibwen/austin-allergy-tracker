@@ -141,45 +141,7 @@ document.write(`
 
 var options = { month: 'short', day: 'numeric' };
 
-var aryRagweed = [
-{ y: new Date('2021/09/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/13').toLocaleDateString('en-US', options), a: 8 }, 
-{ y: new Date('2021/09/14').toLocaleDateString('en-US', options), a: 31 }, 
-{ y: new Date('2021/09/15').toLocaleDateString('en-US', options), a: 49 }, 
-{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 99 }, 
-{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 125 }, 
-{ y: new Date('2021/09/18').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/19').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/20').toLocaleDateString('en-US', options), a: 151 }, 
-{ y: new Date('2021/09/21').toLocaleDateString('en-US', options), a: 116 }, 
-{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 351 }, 
-{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 363 }, 
-{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 206 }, 
-{ y: new Date('2021/09/25').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 115 }, 
-{ y: new Date('2021/09/28').toLocaleDateString('en-US', options), a: 161 }, 
-{ y: new Date('2021/09/29').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 201 }, 
-{ y: new Date('2021/10/01').toLocaleDateString('en-US', options), a: 55 }, 
-{ y: new Date('2021/10/02').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/03').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 132 }, 
-{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 102 }, 
-{ y: new Date('2021/10/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 230 }, 
-{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 263 }, 
-{ y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 166 } 
-
-]; 
-
 var aryMold = [
-{ y: new Date('2021/09/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/13').toLocaleDateString('en-US', options), a: 4343 }, 
-{ y: new Date('2021/09/14').toLocaleDateString('en-US', options), a: 5528 }, 
-{ y: new Date('2021/09/15').toLocaleDateString('en-US', options), a: 2645 }, 
 { y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 6844 }, 
 { y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 7436 }, 
 { y: new Date('2021/09/18').toLocaleDateString('en-US', options), a: 0 }, 
@@ -205,129 +167,61 @@ var aryMold = [
 { y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 12832 }, 
 { y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 11240 } 
+{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 11240 }, 
+{ y: new Date('2021/10/12').toLocaleDateString('en-US', options), a: 6646 }, 
+{ y: new Date('2021/10/13').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/14').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/15').toLocaleDateString('en-US', options), a: 37641 } 
 
 ]; 
 
-var aryFall_Elm = [
-{ y: new Date('2021/09/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/13').toLocaleDateString('en-US', options), a: 5 }, 
-{ y: new Date('2021/09/14').toLocaleDateString('en-US', options), a: 3 }, 
-{ y: new Date('2021/09/15').toLocaleDateString('en-US', options), a: 5 }, 
-{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 32 }, 
-{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 132 }, 
+var aryRagweed = [
+{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 99 }, 
+{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 125 }, 
 { y: new Date('2021/09/18').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/19').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/20').toLocaleDateString('en-US', options), a: 216 }, 
-{ y: new Date('2021/09/21').toLocaleDateString('en-US', options), a: 256 }, 
-{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 115 }, 
-{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 99 }, 
-{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 91 }, 
+{ y: new Date('2021/09/20').toLocaleDateString('en-US', options), a: 151 }, 
+{ y: new Date('2021/09/21').toLocaleDateString('en-US', options), a: 116 }, 
+{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 351 }, 
+{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 363 }, 
+{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 206 }, 
 { y: new Date('2021/09/25').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 45 }, 
-{ y: new Date('2021/09/28').toLocaleDateString('en-US', options), a: 132 }, 
-{ y: new Date('2021/09/29').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 559 }, 
-{ y: new Date('2021/10/01').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 115 }, 
+{ y: new Date('2021/09/28').toLocaleDateString('en-US', options), a: 161 }, 
+{ y: new Date('2021/09/29').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 201 }, 
+{ y: new Date('2021/10/01').toLocaleDateString('en-US', options), a: 55 }, 
 { y: new Date('2021/10/02').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/03').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 526 }, 
-{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 306 }, 
+{ y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 132 }, 
+{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 102 }, 
 { y: new Date('2021/10/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 148 }, 
-{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 165 }, 
+{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 230 }, 
+{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 263 }, 
 { y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 14 } 
+{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 166 }, 
+{ y: new Date('2021/10/12').toLocaleDateString('en-US', options), a: 132 }, 
+{ y: new Date('2021/10/13').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/14').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/15').toLocaleDateString('en-US', options), a: 99 } 
 
 ]; 
 
-var aryGrass = [
-{ y: new Date('2021/09/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/13').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/14').toLocaleDateString('en-US', options), a: 3 }, 
-{ y: new Date('2021/09/15').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 7 }, 
-{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/18').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/19').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/20').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/21').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/09/25').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/09/28').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/29').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2021/10/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/02').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/03').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2021/10/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 3 }, 
-{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 4 } 
-
-]; 
-
-var aryOther = [
-{ y: new Date('2021/09/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/13').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/14').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/15').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/18').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/19').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/20').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/21').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/25').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/28').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/29').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/02').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/03').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 6 } 
-
-]; 
-
-var aryRedberry___Juniper = [
-{ y: new Date('2021/09/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/13').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/14').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/15').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 0 }, 
+var aryWeeds = [
+{ y: new Date('2021/09/16').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/09/17').toLocaleDateString('en-US', options), a: 6 }, 
 { y: new Date('2021/09/18').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/19').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/20').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/21').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/09/22').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/09/23').toLocaleDateString('en-US', options), a: 6 }, 
+{ y: new Date('2021/09/24').toLocaleDateString('en-US', options), a: 4 }, 
 { y: new Date('2021/09/25').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/09/27').toLocaleDateString('en-US', options), a: 5 }, 
 { y: new Date('2021/09/28').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/29').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 0 }, 
@@ -335,13 +229,17 @@ var aryRedberry___Juniper = [
 { y: new Date('2021/10/02').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/03').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 3 }, 
 { y: new Date('2021/10/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 6 }, 
+{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 6 }, 
 { y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 2 } 
+{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/12').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/13').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/14').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/15').toLocaleDateString('en-US', options), a: 2 } 
 
 ]; 
 
@@ -350,9 +248,18 @@ var aryRedberry___Juniper = [
 </script>
 
 
-<h3 class="allergy_content">October 11, 2021</h3>
+<h3 class="allergy_content">October 15, 2021</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
+<div class="allergy_block">
+	<div class="block_title High">
+		<div class="allergen_value">Mold - High</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
+	</div>
+	<div id="Mold_block" class="peek_a_block">
+		<div id="Mold"></div>
+		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
+	</div>
+</div>
 <div class="allergy_block">
 	<div class="block_title High">
 		<div class="allergen_value">Ragweed - High</div><div class="plusecks"><img id="Ragweed" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Ragweed', aryRagweed);"  /></div>
@@ -363,47 +270,11 @@ var aryRedberry___Juniper = [
 	</div>
 </div>
 <div class="allergy_block">
-	<div class="block_title Medium">
-		<div class="allergen_value">Mold - Medium</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
-	</div>
-	<div id="Mold_block" class="peek_a_block">
-		<div id="Mold"></div>
-		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
-	</div>
-</div>
-<div class="allergy_block">
 	<div class="block_title Low">
-		<div class="allergen_value">Fall Elm - Low</div><div class="plusecks"><img id="Fall_Elm" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Fall_Elm', aryFall_Elm);"  /></div>
+		<div class="allergen_value">Weeds - Low</div><div class="plusecks"><img id="Weeds" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Weeds', aryWeeds);"  /></div>
 	</div>
-	<div id="Fall_Elm_block" class="peek_a_block">
-		<div id="Fall_Elm"></div>
-		<div class="allergy_desc">No description</div>
-	</div>
-</div>
-<div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Grass - Low</div><div class="plusecks"><img id="Grass" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Grass', aryGrass);"  /></div>
-	</div>
-	<div id="Grass_block" class="peek_a_block">
-		<div id="Grass"></div>
-		<div class="allergy_desc">Indistinguishable under a microscope. Can last from March - September.  Highest counts typically in May & June.</div>
-	</div>
-</div>
-<div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Other - Low</div><div class="plusecks"><img id="Other" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Other', aryOther);"  /></div>
-	</div>
-	<div id="Other_block" class="peek_a_block">
-		<div id="Other"></div>
-		<div class="allergy_desc">No description</div>
-	</div>
-</div>
-<div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Redberry/Juniper - Low</div><div class="plusecks"><img id="Redberry___Juniper" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Redberry___Juniper', aryRedberry___Juniper);"  /></div>
-	</div>
-	<div id="Redberry___Juniper_block" class="peek_a_block">
-		<div id="Redberry___Juniper"></div>
+	<div id="Weeds_block" class="peek_a_block">
+		<div id="Weeds"></div>
 		<div class="allergy_desc">No description</div>
 	</div>
 </div>
