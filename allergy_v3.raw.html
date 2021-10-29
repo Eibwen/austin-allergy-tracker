@@ -277,6 +277,40 @@ var aryMold = [
 
 ]; 
 
+var aryWeeds = [
+{ y: new Date('2021/09/30').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/01').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/02').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/03').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/04').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/05').toLocaleDateString('en-US', options), a: 3 }, 
+{ y: new Date('2021/10/06').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/07').toLocaleDateString('en-US', options), a: 6 }, 
+{ y: new Date('2021/10/08').toLocaleDateString('en-US', options), a: 6 }, 
+{ y: new Date('2021/10/09').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/10').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/11').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/12').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/13').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/14').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/15').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/16').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/17').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/18').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/19').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/20').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/21').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/22').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/23').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/24').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/25').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/10/26').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/10/27').toLocaleDateString('en-US', options), a: 1 }, 
+{ y: new Date('2021/10/28').toLocaleDateString('en-US', options), a: 1 }, 
+{ y: new Date('2021/10/29').toLocaleDateString('en-US', options), a: 2 } 
+
+]; 
+
 
 
 </script>
@@ -319,6 +353,15 @@ var aryMold = [
 	<div id="Mold_block" class="peek_a_block">
 		<div id="Mold"></div>
 		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
+	</div>
+</div>
+<div class="allergy_block">
+	<div class="block_title Low">
+		<div class="allergen_value">Weeds - Low</div><div class="plusecks"><img id="Weeds" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Weeds', aryWeeds);"  /></div>
+	</div>
+	<div id="Weeds_block" class="peek_a_block">
+		<div id="Weeds"></div>
+		<div class="allergy_desc">No description</div>
 	</div>
 </div>
 
