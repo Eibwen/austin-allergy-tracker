@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryGrass = [
-{ y: new Date('2021/10/20').toLocaleDateString('en-US', options), a: 4 }, 
 { y: new Date('2021/10/21').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2021/10/22').toLocaleDateString('en-US', options), a: 4 }, 
 { y: new Date('2021/10/23').toLocaleDateString('en-US', options), a: 0 }, 
@@ -171,12 +170,12 @@ var aryGrass = [
 { y: new Date('2021/11/15').toLocaleDateString('en-US', options), a: 4 }, 
 { y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 4 }, 
 { y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 8 }, 
-{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 22 } 
+{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 22 }, 
+{ y: new Date('2021/11/19').toLocaleDateString('en-US', options), a: 8 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2021/10/20').toLocaleDateString('en-US', options), a: 5611 }, 
 { y: new Date('2021/10/21').toLocaleDateString('en-US', options), a: 1645 }, 
 { y: new Date('2021/10/22').toLocaleDateString('en-US', options), a: 4245 }, 
 { y: new Date('2021/10/23').toLocaleDateString('en-US', options), a: 0 }, 
@@ -205,12 +204,12 @@ var aryMold = [
 { y: new Date('2021/11/15').toLocaleDateString('en-US', options), a: 3915 }, 
 { y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 4837 }, 
 { y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 5261 }, 
-{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 3290 } 
+{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 3290 }, 
+{ y: new Date('2021/11/19').toLocaleDateString('en-US', options), a: 3162 } 
 
 ]; 
 
 var aryRagweed = [
-{ y: new Date('2021/10/20').toLocaleDateString('en-US', options), a: 99 }, 
 { y: new Date('2021/10/21').toLocaleDateString('en-US', options), a: 41 }, 
 { y: new Date('2021/10/22').toLocaleDateString('en-US', options), a: 66 }, 
 { y: new Date('2021/10/23').toLocaleDateString('en-US', options), a: 0 }, 
@@ -239,12 +238,12 @@ var aryRagweed = [
 { y: new Date('2021/11/15').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 5 }, 
 { y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 9 } 
+{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 9 }, 
+{ y: new Date('2021/11/19').toLocaleDateString('en-US', options), a: 7 } 
 
 ]; 
 
 var aryRedberry___Juniper = [
-{ y: new Date('2021/10/20').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2021/10/21').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/22').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/10/23').toLocaleDateString('en-US', options), a: 0 }, 
@@ -273,7 +272,8 @@ var aryRedberry___Juniper = [
 { y: new Date('2021/11/15').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 9 } 
+{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 9 }, 
+{ y: new Date('2021/11/19').toLocaleDateString('en-US', options), a: 5 } 
 
 ]; 
 
@@ -282,12 +282,12 @@ var aryRedberry___Juniper = [
 </script>
 
 
-<h3 class="allergy_content">November 18, 2021</h3>
+<h3 class="allergy_content">November 19, 2021</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title High">
-		<div class="allergen_value">Grass - High</div><div class="plusecks"><img id="Grass" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Grass', aryGrass);"  /></div>
+	<div class="block_title Medium">
+		<div class="allergen_value">Grass - Medium</div><div class="plusecks"><img id="Grass" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Grass', aryGrass);"  /></div>
 	</div>
 	<div id="Grass_block" class="peek_a_block">
 		<div id="Grass"></div>
