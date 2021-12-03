@@ -4,9 +4,10 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Cedar: 1** (2021/12/02)  [week high: 1, month: 1]
-- **Grass: 1** (2021/12/02)  [week high: 4, month: 22]
-- **Mold: 1514** (2021/12/02)  [week high: 4014, month: 13161]
+- **Mold: 6561** (2021/12/03)  [week high: 6561, month: 13161]
+- **Cedar: 3** (2021/12/03)  [week high: 3, month: 3]
+- **Grass: 3** (2021/12/03)  [week high: 4, month: 22]
+- **Ragweed: 1** (2021/12/03)  [week high: 1, month: 11]
 <!-- END INJECT FORECAST -->
 
 ## Technique
