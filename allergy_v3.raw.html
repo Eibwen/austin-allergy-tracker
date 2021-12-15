@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryCedar = [
-{ y: new Date('2021/11/15').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 0 }, 
@@ -171,12 +170,12 @@ var aryCedar = [
 { y: new Date('2021/12/11').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/12/12').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/12/13').toLocaleDateString('en-US', options), a: 4 }, 
-{ y: new Date('2021/12/14').toLocaleDateString('en-US', options), a: 12 } 
+{ y: new Date('2021/12/14').toLocaleDateString('en-US', options), a: 12 }, 
+{ y: new Date('2021/12/15').toLocaleDateString('en-US', options), a: 230 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2021/11/15').toLocaleDateString('en-US', options), a: 3915 }, 
 { y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 4837 }, 
 { y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 5261 }, 
 { y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 3290 }, 
@@ -205,7 +204,42 @@ var aryMold = [
 { y: new Date('2021/12/11').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/12/12').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2021/12/13').toLocaleDateString('en-US', options), a: 2665 }, 
-{ y: new Date('2021/12/14').toLocaleDateString('en-US', options), a: 5764 } 
+{ y: new Date('2021/12/14').toLocaleDateString('en-US', options), a: 5764 }, 
+{ y: new Date('2021/12/15').toLocaleDateString('en-US', options), a: 6975 } 
+
+]; 
+
+var aryGrass = [
+{ y: new Date('2021/11/16').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/11/17').toLocaleDateString('en-US', options), a: 8 }, 
+{ y: new Date('2021/11/18').toLocaleDateString('en-US', options), a: 22 }, 
+{ y: new Date('2021/11/19').toLocaleDateString('en-US', options), a: 8 }, 
+{ y: new Date('2021/11/20').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/21').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/22').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/11/23').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/11/24').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/11/25').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/26').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/27').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/28').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/29').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/11/30').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/12/01').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/12/02').toLocaleDateString('en-US', options), a: 1 }, 
+{ y: new Date('2021/12/03').toLocaleDateString('en-US', options), a: 3 }, 
+{ y: new Date('2021/12/04').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/12/05').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/12/06').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/12/07').toLocaleDateString('en-US', options), a: 2 }, 
+{ y: new Date('2021/12/08').toLocaleDateString('en-US', options), a: 3 }, 
+{ y: new Date('2021/12/09').toLocaleDateString('en-US', options), a: 4 }, 
+{ y: new Date('2021/12/10').toLocaleDateString('en-US', options), a: 1 }, 
+{ y: new Date('2021/12/11').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/12/12').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/12/13').toLocaleDateString('en-US', options), a: 1 }, 
+{ y: new Date('2021/12/14').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2021/12/15').toLocaleDateString('en-US', options), a: 1 } 
 
 ]; 
 
@@ -214,12 +248,12 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content">December 14, 2021</h3>
+<h3 class="allergy_content">December 15, 2021</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Cedar - Low</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
+	<div class="block_title High">
+		<div class="allergen_value">Cedar - High</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
 	</div>
 	<div id="Cedar_block" class="peek_a_block">
 		<div id="Cedar"></div>
@@ -227,12 +261,21 @@ var aryMold = [
 	</div>
 </div>
 <div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Mold - Low</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
+	<div class="block_title Medium">
+		<div class="allergen_value">Mold - Medium</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
 	</div>
 	<div id="Mold_block" class="peek_a_block">
 		<div id="Mold"></div>
 		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
+	</div>
+</div>
+<div class="allergy_block">
+	<div class="block_title Low">
+		<div class="allergen_value">Grass - Low</div><div class="plusecks"><img id="Grass" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Grass', aryGrass);"  /></div>
+	</div>
+	<div id="Grass_block" class="peek_a_block">
+		<div id="Grass"></div>
+		<div class="allergy_desc">Indistinguishable under a microscope. Can last from March - September.  Highest counts typically in May & June.</div>
 	</div>
 </div>
 
