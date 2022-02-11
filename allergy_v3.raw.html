@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryCedar = [
-{ y: new Date('2022/01/12').toLocaleDateString('en-US', options), a: 33 }, 
 { y: new Date('2022/01/13').toLocaleDateString('en-US', options), a: 406 }, 
 { y: new Date('2022/01/14').toLocaleDateString('en-US', options), a: 1546 }, 
 { y: new Date('2022/01/15').toLocaleDateString('en-US', options), a: 0 }, 
@@ -171,12 +170,12 @@ var aryCedar = [
 { y: new Date('2022/02/07').toLocaleDateString('en-US', options), a: 28 }, 
 { y: new Date('2022/02/08').toLocaleDateString('en-US', options), a: 72 }, 
 { y: new Date('2022/02/09').toLocaleDateString('en-US', options), a: 312 }, 
-{ y: new Date('2022/02/10').toLocaleDateString('en-US', options), a: 1545 } 
+{ y: new Date('2022/02/10').toLocaleDateString('en-US', options), a: 1545 }, 
+{ y: new Date('2022/02/11').toLocaleDateString('en-US', options), a: 362 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2022/01/12').toLocaleDateString('en-US', options), a: 9672 }, 
 { y: new Date('2022/01/13').toLocaleDateString('en-US', options), a: 2761 }, 
 { y: new Date('2022/01/14').toLocaleDateString('en-US', options), a: 761 }, 
 { y: new Date('2022/01/15').toLocaleDateString('en-US', options), a: 0 }, 
@@ -205,7 +204,8 @@ var aryMold = [
 { y: new Date('2022/02/07').toLocaleDateString('en-US', options), a: 1021 }, 
 { y: new Date('2022/02/08').toLocaleDateString('en-US', options), a: 861 }, 
 { y: new Date('2022/02/09').toLocaleDateString('en-US', options), a: 712 }, 
-{ y: new Date('2022/02/10').toLocaleDateString('en-US', options), a: 602 } 
+{ y: new Date('2022/02/10').toLocaleDateString('en-US', options), a: 602 }, 
+{ y: new Date('2022/02/11').toLocaleDateString('en-US', options), a: 811 } 
 
 ]; 
 
@@ -214,12 +214,12 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content">February 10, 2022</h3>
+<h3 class="allergy_content">February 11, 2022</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Very High">
-		<div class="allergen_value">Cedar - Very High</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
+	<div class="block_title High">
+		<div class="allergen_value">Cedar - High</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
 	</div>
 	<div id="Cedar_block" class="peek_a_block">
 		<div id="Cedar"></div>
