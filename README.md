@@ -4,9 +4,8 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Cedar: 115** (2022/02/17)  [week high: 362, month: 1744]
-- **Elm: 1** (2022/02/17)  [week high: 1, month: 1]
-- **Mold: 2437** (2022/02/17)  [week high: 2437, month: 13161]
+- **Cedar: 263** (2022/02/18)  [week high: 263, month: 1545]
+- **Mold: 1112** (2022/02/18)  [week high: 2437, month: 13161]
 <!-- END INJECT FORECAST -->
 
 ## Technique
