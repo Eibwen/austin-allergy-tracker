@@ -17,3 +17,7 @@ I encountered this pattern via [@simonw's](https://github.com/simonw) writeup: h
 Their implementation seems nice and simple as well, I should dig through their various use-cases for it and find other useful tools that I'm sure they've built
 
 Pulling data from https://www.kxan.com/weather/allergy-forecast-austin-texas/
+
+## TODO
+
+[] check if there is useful data I can pull from https://austinpollen.com/pollenpage.html
