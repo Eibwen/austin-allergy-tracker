@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryMold = [
-{ y: new Date('2022/07/20').toLocaleDateString('en-US', options), a: 1123 }, 
 { y: new Date('2022/07/21').toLocaleDateString('en-US', options), a: 1212 }, 
 { y: new Date('2022/07/22').toLocaleDateString('en-US', options), a: 1063 }, 
 { y: new Date('2022/07/23').toLocaleDateString('en-US', options), a: 0 }, 
@@ -171,12 +170,12 @@ var aryMold = [
 { y: new Date('2022/08/15').toLocaleDateString('en-US', options), a: 20165 }, 
 { y: new Date('2022/08/16').toLocaleDateString('en-US', options), a: 9674 }, 
 { y: new Date('2022/08/17').toLocaleDateString('en-US', options), a: 7766 }, 
-{ y: new Date('2022/08/18').toLocaleDateString('en-US', options), a: 6673 } 
+{ y: new Date('2022/08/18').toLocaleDateString('en-US', options), a: 6673 }, 
+{ y: new Date('2022/08/19').toLocaleDateString('en-US', options), a: 21058 } 
 
 ]; 
 
 var aryGrass = [
-{ y: new Date('2022/07/20').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2022/07/21').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2022/07/22').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2022/07/23').toLocaleDateString('en-US', options), a: 0 }, 
@@ -205,7 +204,8 @@ var aryGrass = [
 { y: new Date('2022/08/15').toLocaleDateString('en-US', options), a: 2 }, 
 { y: new Date('2022/08/16').toLocaleDateString('en-US', options), a: 1 }, 
 { y: new Date('2022/08/17').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/08/18').toLocaleDateString('en-US', options), a: 3 } 
+{ y: new Date('2022/08/18').toLocaleDateString('en-US', options), a: 3 }, 
+{ y: new Date('2022/08/19').toLocaleDateString('en-US', options), a: 1 } 
 
 ]; 
 
@@ -214,12 +214,12 @@ var aryGrass = [
 </script>
 
 
-<h3 class="allergy_content">August 18, 2022</h3>
+<h3 class="allergy_content">August 19, 2022</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Medium">
-		<div class="allergen_value">Mold - Medium</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
+	<div class="block_title High">
+		<div class="allergen_value">Mold - High</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
 	</div>
 	<div id="Mold_block" class="peek_a_block">
 		<div id="Mold"></div>
