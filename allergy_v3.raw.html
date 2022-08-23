@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryMold = [
-{ y: new Date('2022/07/24').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2022/07/25').toLocaleDateString('en-US', options), a: 2362 }, 
 { y: new Date('2022/07/26').toLocaleDateString('en-US', options), a: 2369 }, 
 { y: new Date('2022/07/27').toLocaleDateString('en-US', options), a: 1266 }, 
@@ -171,41 +170,8 @@ var aryMold = [
 { y: new Date('2022/08/19').toLocaleDateString('en-US', options), a: 21058 }, 
 { y: new Date('2022/08/20').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2022/08/21').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/22').toLocaleDateString('en-US', options), a: 15781 } 
-
-]; 
-
-var aryGrass = [
-{ y: new Date('2022/07/24').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/07/25').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/07/26').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/07/27').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/07/28').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/07/29').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/07/30').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/07/31').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/01').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/02').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/03').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/08/04').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/08/05').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/06').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/07').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/08').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/09').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/10').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/11').toLocaleDateString('en-US', options), a: 3 }, 
-{ y: new Date('2022/08/12').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/08/13').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/14').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/15').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/08/16').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/17').toLocaleDateString('en-US', options), a: 2 }, 
-{ y: new Date('2022/08/18').toLocaleDateString('en-US', options), a: 3 }, 
-{ y: new Date('2022/08/19').toLocaleDateString('en-US', options), a: 1 }, 
-{ y: new Date('2022/08/20').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/21').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2022/08/22').toLocaleDateString('en-US', options), a: 2 } 
+{ y: new Date('2022/08/22').toLocaleDateString('en-US', options), a: 15781 }, 
+{ y: new Date('2022/08/23').toLocaleDateString('en-US', options), a: 26797 } 
 
 ]; 
 
@@ -214,7 +180,7 @@ var aryGrass = [
 </script>
 
 
-<h3 class="allergy_content">August 22, 2022</h3>
+<h3 class="allergy_content">August 23, 2022</h3>
 <p class="allergy_content">Official pollen counts are measured on weekdays and are therefore recorded as zero on weekend days. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
@@ -224,15 +190,6 @@ var aryGrass = [
 	<div id="Mold_block" class="peek_a_block">
 		<div id="Mold"></div>
 		<div class="allergy_desc">Present to varying degrees all year. Higher counts in summer/fall.</div>
-	</div>
-</div>
-<div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Grass - Low</div><div class="plusecks"><img id="Grass" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Grass', aryGrass);"  /></div>
-	</div>
-	<div id="Grass_block" class="peek_a_block">
-		<div id="Grass"></div>
-		<div class="allergy_desc">Indistinguishable under a microscope. Can last from March - September.  Highest counts typically in May & June.</div>
 	</div>
 </div>
 
