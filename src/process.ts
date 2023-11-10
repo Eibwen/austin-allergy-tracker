@@ -66,7 +66,7 @@ async function processLineByLine(filename: Filepath) {
     fs.readFile(readFilename, (err, data) => {
       if(err) {
         console.log('ERROR', err);
-        return;
+        // fall through for empty data
       }
 
       // TODO consider parsing this as a Map?

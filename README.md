@@ -6,6 +6,9 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 <!-- INJECT FORECAST -->
 <!-- END INJECT FORECAST -->
 
+<!-- INJECT HOURLY FORECAST -->
+<!-- END INJECT HOURLY FORECAST -->
+
 ## Technique
 
 I encountered this pattern via [@simonw's](https://github.com/simonw) writeup: https://simonwillison.net/2020/Oct/9/git-scraping/

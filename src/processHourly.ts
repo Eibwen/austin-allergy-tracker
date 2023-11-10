@@ -7,8 +7,10 @@ type DataSeries = { [key: string]: number; }
 type DataCollection = { [allergen: string]: DataSeries }
 
 async function processHourlyJson(filename: Filepath) {
-  console.log(`INFO: Opening ${filename}`)
-  // const fileStream = fs.createReadStream(filename);
+  console.log(`INFO: Opening ${filename}`);
+
+
+  const allergenData: DataCollection = {};
 
   fs.readFile(filename, "utf8", (error, data) => {
     if (error) {
@@ -16,28 +18,57 @@ async function processHourlyJson(filename: Filepath) {
       return;
     }
 
-    const hourlyDataObject = JSON.parse(data);
+    allergenData = JSON.parse(data);
 
-    console.log(hourlyDataObject);
+    console.log(allergenData);
   });
 
-
-
-  const allergenData: DataCollection = {};
 
   for (const allergenProp in allergenData)
   {
     console.log(`INFO: Processing ${allergenProp} data to file`)
-    const filename = `allergenData/daily.${allergenProp}.json`;
+    const filename = `allergenData/hourly.${allergenProp}.json`;
     const readFilename = filename;
 
     const newData = allergenData[allergenProp];
+    // want to "noramalize" this into "rows"
+
+    // The last value in this array is THIS HOUR, going back approx 24 hours?
+    const hourVals = newData.x;
+    const countsVals = newData.y;
+    const miseryVals = newData.misery;
+
+    // zip these three arrays... then be able to merge them into the new object??
+    if (newData.x.length !== newData.y.length && newData.x.length !== newData.misery.length) {
+      console.log('ERROR', `Data lengths don't match x:${newData.x.length}, y:${newData.y.length}, misery:${newData.misery.length}`);
+      return;
+    }
+    const zipped: Array<[string, number, number]> = [];
+    for (let index = 0; index < newData.x.length; ++index) {
+      zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
+    }
+
+    const normalizedData = {
+      data: zipped,
+      daily_avg_pollen: newData['24_hour_avg_pollen'],
+      daily_avg_misery: newData['24_hour_avg_misery'],
+      sort_value: newData.sort_value
+    }
+
+    console.log("############");
+
+    console.log(normalizedData);
+    
+
+
+
+
 
     console.log(`INFO: Reading previous data ${readFilename}`)
     fs.readFile(readFilename, (err, data) => {
       if(err) {
         console.log('ERROR', err);
-        return;
+        // fall through for empty data
       }
 
       // TODO consider parsing this as a Map?
@@ -55,8 +86,9 @@ async function processHourlyJson(filename: Filepath) {
   }
 
 
-  console.log('INFO: updating README.md')
-  updateReadme(allergenData);
+  // TODO refactor this too
+  // console.log('INFO: updating README.md hourly data')
+  // updateReadme(allergenData);
 }
 
 
@@ -65,7 +97,7 @@ function wrapWithInjectionSpot(label: string, str: string) {
 }
 function updateReadme(allergenData: DataCollection) {
   const filename = 'README.md';
-  const injectionLabel = 'INJECT FORECAST';
+  const injectionLabel = 'INJECT HOURLY FORECAST';
 
   fs.readFile(filename, 'utf8', (err, readmeContent) => {
     if (err) {
