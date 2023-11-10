@@ -6,59 +6,30 @@ type Filepath = string
 type DataSeries = { [key: string]: number; }
 type DataCollection = { [allergen: string]: DataSeries }
 
-async function processLineByLine(filename: Filepath) {
+async function processHourlyJson(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`)
-  const fileStream = fs.createReadStream(filename);
+  // const fileStream = fs.createReadStream(filename);
 
-  const rl = readline.createInterface({
-    input: fileStream,
-    crlfDelay: Infinity
+  fs.readFile(filename, "utf8", (error, data) => {
+    if (error) {
+      console.log('ERROR', error);
+      return;
+    }
+
+    const hourlyDataObject = JSON.parse(data);
+
+    console.log(hourlyDataObject);
   });
-  // Note: we use the crlfDelay option to recognize all instances of CR LF
-  // ('\r\n') in input.txt as a single line break.
 
-  const ignorePattern = new RegExp(/^(\W*|\];\W*)$/);
-  const dataPattern = new RegExp(/^{ y: new Date\(\'(.+?)\'\).toLocaleDateString\(\'en-US\', options\), a: (\d+) },?\W?$/);
+
 
   const allergenData: DataCollection = {};
-
-  let allergenType = '';
-  for await (const line of rl) {
-    if (line.startsWith('var ary')) {
-      // Old data
-      if (allergenType) {
-        console.log(`INFO: For: ${allergenType} got ${Object.keys(allergenData[allergenType]).length} records`);
-      }
-
-      // New data
-      allergenType = line.match(/var ary(.+)\b/)[1];
-      // console.log(`INFO: allergen type set: ${allergenType}`);
-      continue;
-    }
-
-    if (ignorePattern.test(line)) {
-      console.log(`DEBUG: ignoring line: '${line}'`);
-      continue;
-    }
-
-    let dataLine = dataPattern.exec(line);
-    if (dataLine != null) {
-      console.log(`DEBUG: add data`)
-      allergenData[allergenType] = allergenData[allergenType] || {};
-      allergenData[allergenType][dataLine[1]] = +dataLine[2];
-    }
-    else {
-      console.log(`WARNING: Unmatched line: '${line}'`)
-    }
-  }
 
   for (const allergenProp in allergenData)
   {
     console.log(`INFO: Processing ${allergenProp} data to file`)
     const filename = `allergenData/daily.${allergenProp}.json`;
     const readFilename = filename;
-    
-    migrateData(`allergenData/alergin.${allergenProp}.json`, filename);
 
     const newData = allergenData[allergenProp];
 
@@ -86,14 +57,6 @@ async function processLineByLine(filename: Filepath) {
 
   console.log('INFO: updating README.md')
   updateReadme(allergenData);
-}
-
-
-function migrateData(oldname: Filepath, newName: Filepath) {
-  // If it exists, rename the old to the new name
-  if (fs.existsSync(oldname)) {
-    fs.renameSync(oldname, newName);
-  }
 }
 
 
@@ -137,4 +100,4 @@ function updateReadme(allergenData: DataCollection) {
 }
 
 
-processLineByLine(process.env.JS_ARRAYS_NAME);
+processHourlyJson(process.env.HTML_HOURLY_NAME);

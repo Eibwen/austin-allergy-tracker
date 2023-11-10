@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "ts-node ./src/process.ts",
+    "process-hourly": "ts-node ./src/processHourly.ts",
     "build": "tsc"
   },
   "devDependencies": {
