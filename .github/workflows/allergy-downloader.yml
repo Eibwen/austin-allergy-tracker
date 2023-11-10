@@ -31,7 +31,7 @@ jobs:
 
     - name: Fetch latest hourly data
       run: |-
-        curl https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_hourly.json | json > $HTML_HOURLY_NAME
+        curl https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_hourly.json | jq > $HTML_HOURLY_NAME
       continue-on-error: true
 
     - name: Setup Node.js environment
