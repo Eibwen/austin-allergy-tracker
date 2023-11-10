@@ -20,6 +20,7 @@ jobs:
 
     - name: Fetch latest daily data
       run: |-
+        mkdir -p raw
         curl https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_v5.js?v=5 > $HTML_NAME
 
     - name: Process daily data
