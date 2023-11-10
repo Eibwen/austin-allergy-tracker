@@ -54,12 +54,16 @@ async function processLineByLine(filename: Filepath) {
 
   for (const allergenProp in allergenData)
   {
-    console.log(`INFO: Writing ${allergenProp} data to file`)
-    const filename = `alergin.${allergenProp}.json`;
+    console.log(`INFO: Processing ${allergenProp} data to file`)
+    const filename = `allergenData/daily.${allergenProp}.json`;
+    const readFilename = filename;
+    
+    migrateData(`allergenData/alergin.${allergenProp}.json`, filename);
+
     const newData = allergenData[allergenProp];
 
-    console.log(`INFO: Reading previous data ${filename}`)
-    fs.readFile(filename, (err, data) => {
+    console.log(`INFO: Reading previous data ${readFilename}`)
+    fs.readFile(readFilename, (err, data) => {
       if(err) console.log('ERROR', err);
 
       // TODO consider parsing this as a Map?
@@ -71,6 +75,7 @@ async function processLineByLine(filename: Filepath) {
 
       fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
         if(err) console.log('error', err);
+        console.log(`INFO: ${filename}: Wrote combined data ${Object.keys(combinedData).length} (${Object.keys(newData).length} new, ${Object.keys(previousData).length} existing)`)
       });
     });
   }
@@ -78,6 +83,14 @@ async function processLineByLine(filename: Filepath) {
 
   console.log('INFO: updating README.md')
   updateReadme(allergenData);
+}
+
+
+function migrateData(oldname: string, newName: string) {
+  // If it exists, rename the old to the new name
+  if (fs.existsSync(oldname)) {
+    fs.renameSync(oldname, newName);
+  }
 }
 
 
