@@ -10,7 +10,7 @@ async function processHourlyJson(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`);
 
 
-  const allergenData: DataCollection = {};
+  let allergenData: DataCollection = {};
 
   fs.readFile(filename, "utf8", (error, data) => {
     if (error) {
@@ -39,12 +39,12 @@ async function processHourlyJson(filename: Filepath) {
     const miseryVals = newData.misery;
 
     // zip these three arrays... then be able to merge them into the new object??
-    if (newData.x.length !== newData.y.length && newData.x.length !== newData.misery.length) {
-      console.log('ERROR', `Data lengths don't match x:${newData.x.length}, y:${newData.y.length}, misery:${newData.misery.length}`);
+    if (hourVals.length !== countsVals.length && hourVals.length !== miseryVals.length) {
+      console.log('ERROR', `Data lengths don't match x:${hourVals.length}, y:${countsVals.length}, misery:${miseryVals.length}`);
       return;
     }
     const zipped: Array<[string, number, number]> = [];
-    for (let index = 0; index < newData.x.length; ++index) {
+    for (let index = 0; index < hourVals.length; ++index) {
       zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
     }
 
