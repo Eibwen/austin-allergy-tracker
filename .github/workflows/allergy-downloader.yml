@@ -11,7 +11,7 @@ jobs:
     name: Allergy Job
     runs-on: ubuntu-latest
     env:
-      HTML_NAME: allergy_v3.raw.html
+      HTML_NAME: raw/allergy_v5.raw.html
       JS_ARRAYS_NAME: /tmp/allergy_v3.arrays.js
       HTML_HOURLY_NAME: raw/allergy_hourly.json.html
     steps:
