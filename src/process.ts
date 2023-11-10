@@ -71,7 +71,7 @@ async function processLineByLine(filename: Filepath) {
 
       fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
         if(err) console.log('error', err);
-        console.log(`INFO: Wrote combined data ${Object.keys(combinedData).length} (${Object.keys(newData).length} new, ${Object.keys(previousData).length} existing)`)
+        console.log(`INFO: ${filename}: Wrote combined data ${Object.keys(combinedData).length} (${Object.keys(newData).length} new, ${Object.keys(previousData).length} existing)`)
       });
     });
   }
