@@ -4,7 +4,16 @@ import {EOL} from 'os'
 
 type Filepath = string
 type DataSeries = { [key: string]: number; }
-type DataCollection = { [allergen: string]: DataSeries }
+type DataForChart = {
+  x: Array<string>,
+  y: Array<number>,
+  misery: Array<number>,
+  '24_hour_avg_pollen': number,
+  '24_hour_avg_misery': number,
+  sort_value: number
+}
+type DataCollection = { [allergen: string]: DataForChart }
+// TODO need to make this data collection into my data type
 
 async function processHourlyJson(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`);
@@ -37,6 +46,10 @@ async function processHourlyJson(filename: Filepath) {
     const hourVals = newData.x;
     const countsVals = newData.y;
     const miseryVals = newData.misery;
+
+    console.log(hourVals);
+    console.log(countsVals);
+    console.log(miseryVals);
 
     // zip these three arrays... then be able to merge them into the new object??
     if (hourVals.length !== countsVals.length && hourVals.length !== miseryVals.length) {
