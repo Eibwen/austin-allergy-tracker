@@ -54,7 +54,7 @@ async function processLineByLine(filename: Filepath) {
 
   for (const allergenProp in allergenData)
   {
-    console.log(`INFO: Writing ${allergenProp} data to file`)
+    console.log(`INFO: Processing ${allergenProp} data to file`)
     const filename = `alergin.${allergenProp}.json`;
     const newData = allergenData[allergenProp];
 
@@ -71,6 +71,7 @@ async function processLineByLine(filename: Filepath) {
 
       fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
         if(err) console.log('error', err);
+        console.log(`INFO: Wrote combined data ${Object.keys(combinedData).length} (${Object.keys(newData).length} new, ${Object.keys(previousData).length} existing)`)
       });
     });
   }
