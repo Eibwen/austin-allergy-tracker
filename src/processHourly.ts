@@ -30,22 +30,21 @@ async function processHourlyJson(filename: Filepath) {
     allergenData = JSON.parse(data);
 
     console.log(allergenData);
-  });
 
 
-  for (const allergenProp in allergenData)
-  {
-    console.log(`INFO: Processing ${allergenProp} data to file`)
-    const filename = `allergenData/hourly.${allergenProp}.json`;
-    const readFilename = filename;
+    for (const allergenProp in allergenData)
+    {
+      console.log(`INFO: Processing ${allergenProp} data to file`)
+      const filename = `allergenData/hourly.${allergenProp}.json`;
+      const readFilename = filename;
 
-    const newData = allergenData[allergenProp];
-    // want to "noramalize" this into "rows"
+      const newData = allergenData[allergenProp];
+      // want to "noramalize" this into "rows"
 
-    // The last value in this array is THIS HOUR, going back approx 24 hours?
-    const hourVals = newData.x;
-    const countsVals = newData.y;
-    const miseryVals = newData.misery;
+      // The last value in this array is THIS HOUR, going back approx 24 hours?
+      const hourVals = newData.x;
+      const countsVals = newData.y;
+      const miseryVals = newData.misery;
 
     console.log(hourVals);
     console.log(countsVals);
@@ -61,42 +60,44 @@ async function processHourlyJson(filename: Filepath) {
       zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
     }
 
-    const normalizedData = {
-      data: zipped,
-      daily_avg_pollen: newData['24_hour_avg_pollen'],
-      daily_avg_misery: newData['24_hour_avg_misery'],
-      sort_value: newData.sort_value
-    }
-
-    console.log("############");
-
-    console.log(normalizedData);
-    
-
-
-
-
-
-    console.log(`INFO: Reading previous data ${readFilename}`)
-    fs.readFile(readFilename, (err, data) => {
-      if(err) {
-        console.log('ERROR', err);
-        // fall through for empty data
+      const normalizedData = {
+        data: zipped,
+        daily_avg_pollen: newData['24_hour_avg_pollen'],
+        daily_avg_misery: newData['24_hour_avg_misery'],
+        sort_value: newData.sort_value
       }
 
-      // TODO consider parsing this as a Map?
-      const previousData: any = (err) ? {} : JSON.parse(data.toString());
+      console.log("############");
+
+      console.log(normalizedData);
+      
 
 
-      // Combine valuesDictionary and previousData
-      const combinedData: DataSeries = {...previousData, ...newData};
 
-      fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
-        if(err) console.log('error', err);
-        console.log(`INFO: ${filename}: Wrote combined data ${Object.keys(combinedData).length} (${Object.keys(newData).length} new, ${Object.keys(previousData).length} existing)`)
+
+
+      console.log(`INFO: Reading previous data ${readFilename}`)
+      fs.readFile(readFilename, (err, data) => {
+        if(err) {
+          console.log('ERROR', err);
+          // fall through for empty data
+        }
+
+        // TODO consider parsing this as a Map?
+        const previousData: any = (err) ? {} : JSON.parse(data.toString());
+
+
+        // Combine valuesDictionary and previousData
+        const combinedData: DataSeries = {...previousData, ...newData};
+
+        fs.writeFile(filename, JSON.stringify(combinedData, null, 2), function(err) {
+          if(err) console.log('error', err);
+          console.log(`INFO: ${filename}: Wrote combined data ${Object.keys(combinedData).length} (${Object.keys(newData).length} new, ${Object.keys(previousData).length} existing)`)
+        });
       });
-    });
-  }
+    }
+
+  });
 
 
   // TODO refactor this too
