@@ -13,17 +13,23 @@ jobs:
     env:
       HTML_NAME: allergy_v3.raw.html
       JS_ARRAYS_NAME: /tmp/allergy_v3.arrays.js
+      HTML_HOURLY_NAME: raw/allergy_hourly.json.html
     steps:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Fetch latest data
+    - name: Fetch latest daily data
       run: |-
         curl https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_v5.js?v=5 > $HTML_NAME
 
-    - name: Process data
+    - name: Process daily data
       run: |-
         awk '/var ary/,/;/' $HTML_NAME > $JS_ARRAYS_NAME
+      continue-on-error: true
+
+    - name: Fetch latest hourly data
+      run: |-
+        curl https://media.psg.nexstardigital.net/kxan/weather/allergy/allergy_hourly.json > $HTML_HOURLY_NAME
       continue-on-error: true
 
     - name: Setup Node.js environment
