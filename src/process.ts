@@ -56,8 +56,10 @@ async function processLineByLine(filename: Filepath) {
   {
     console.log(`INFO: Processing ${allergenProp} data to file`)
     const filename = `allergenData/daily.${allergenProp}.json`;
-    const readFilename = `alergin.${allergenProp}.json`;
-    // const readFilename = filename;
+    const readFilename = filename;
+    
+    migrateData(`allergenData/alergin.${allergenProp}.json`, filename);
+
     const newData = allergenData[allergenProp];
 
     console.log(`INFO: Reading previous data ${readFilename}`)
@@ -81,6 +83,14 @@ async function processLineByLine(filename: Filepath) {
 
   console.log('INFO: updating README.md')
   updateReadme(allergenData);
+}
+
+
+function migrateData(oldname: string, newName: string) {
+  // If it exists, rename the old to the new name
+  if (fs.existsSync(oldname)) {
+    fs.renameSync(oldname, newName);
+  }
 }
 
 
