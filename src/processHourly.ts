@@ -107,17 +107,15 @@ async function processHourlyJson(filename: Filepath) {
 
 
 function addDateToTimeLabel(hourLabel: string) {
+  
+  const now = new Date();
 
-  //// Will I need timezone stuff?
-  // const offset = yourDate.getTimezoneOffset()
-  // yourDate = new Date(yourDate.getTime() - (offset*60*1000))
-  // const dateLabel = yourDate.toISOString().split('T')[0]
-
-  const parseText = new Date().toLocaleDateString() + ' ' + hourLabel;
+  const parseText = now.toLocaleDateString() + ' ' + hourLabel;
   const parsedDate = new Date(parseText);
 
+  const offsetSecs = 360*60*1000;
   
-  if (parsedDate > new Date()) {
+  if (parsedDate > new Date(now.getTime() - offsetSecs)) {
     // if parsed date is more than right now, assume it was yesterday
     parsedDate.setDate(parsedDate.getDate() - 1);
   }
