@@ -91,6 +91,7 @@ async function processLineByLine(filename: Filepath) {
 
 function migrateData(oldname: Filepath, newName: Filepath) {
   // If it exists, rename the old to the new name
+  //   -- for this one it was just a filename rename, no data structure changes
   if (fs.existsSync(oldname)) {
     fs.renameSync(oldname, newName);
   }

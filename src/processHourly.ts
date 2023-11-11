@@ -57,7 +57,7 @@ async function processHourlyJson(filename: Filepath) {
       //const zipped: Array<[string, number, number]> = [];
       const zipped: DataSeries3 = {};
       for (let index = 0; index < hourVals.length; ++index) {
-        zipped[hourVals[index]] = [countsVals[index], miseryVals[index]];
+        zipped[addDateToTimeLabel(hourVals[index])] = [countsVals[index], miseryVals[index]];
       }
 
       const normalizedData = {
@@ -103,6 +103,27 @@ async function processHourlyJson(filename: Filepath) {
   // TODO refactor this too
   // console.log('INFO: updating README.md hourly data')
   // updateReadme(allergenData);
+}
+
+
+function addDateToTimeLabel(hourLabel: string) {
+
+  //// Will I need timezone stuff?
+  // const offset = yourDate.getTimezoneOffset()
+  // yourDate = new Date(yourDate.getTime() - (offset*60*1000))
+  // const dateLabel = yourDate.toISOString().split('T')[0]
+
+  const parseText = new Date().toLocaleDateString() + ' ' + hourLabel;
+  const parsedDate = new Date(parseText);
+
+  
+  if (parsedDate > new Date()) {
+    // if parsed date is more than right now, assume it was yesterday
+    parsedDate.setDate(parsedDate.getDate() - 1);
+  }
+  return parsedDate.toISOString();
+
+  return hourLabel;
 }
 
 
