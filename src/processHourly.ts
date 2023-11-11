@@ -13,7 +13,8 @@ type DataForChart = {
   sort_value: number
 }
 type DataCollection = { [allergen: string]: DataForChart }
-// TODO need to make this data collection into my data type
+
+type DataSeries3 = { [key: string]: Array<[number, number]>; }
 
 async function processHourlyJson(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`);
@@ -29,7 +30,7 @@ async function processHourlyJson(filename: Filepath) {
 
     allergenData = JSON.parse(data);
 
-    console.log(allergenData);
+    // console.log(allergenData);
 
 
     for (const allergenProp in allergenData)
@@ -40,25 +41,24 @@ async function processHourlyJson(filename: Filepath) {
 
       const newData = allergenData[allergenProp];
       // want to "noramalize" this into "rows"
+      console.log('VERBOSE: Input Data Section', newData);
 
       // The last value in this array is THIS HOUR, going back approx 24 hours?
       const hourVals = newData.x;
       const countsVals = newData.y;
       const miseryVals = newData.misery;
 
-    console.log(hourVals);
-    console.log(countsVals);
-    console.log(miseryVals);
 
-    // zip these three arrays... then be able to merge them into the new object??
-    if (hourVals.length !== countsVals.length && hourVals.length !== miseryVals.length) {
-      console.log('ERROR', `Data lengths don't match x:${hourVals.length}, y:${countsVals.length}, misery:${miseryVals.length}`);
-      return;
-    }
-    const zipped: Array<[string, number, number]> = [];
-    for (let index = 0; index < hourVals.length; ++index) {
-      zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
-    }
+      // zip these three arrays... then be able to merge them into the new object??
+      if (hourVals.length !== countsVals.length && hourVals.length !== miseryVals.length) {
+        console.log('ERROR', `Data lengths don't match x:${hourVals.length}, y:${countsVals.length}, misery:${miseryVals.length}`);
+        return;
+      }
+      //const zipped: Array<[string, number, number]> = [];
+      const zipped: DataSeries3 = {};
+      for (let index = 0; index < hourVals.length; ++index) {
+        zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
+      }
 
       const normalizedData = {
         data: zipped,
@@ -66,10 +66,10 @@ async function processHourlyJson(filename: Filepath) {
         daily_avg_misery: newData['24_hour_avg_misery'],
         sort_value: newData.sort_value
       }
+      
+      console.log('VERBOSE: Normalized Data Section', normalizedData);
 
       console.log("############");
-
-      console.log(normalizedData);
       
 
 
