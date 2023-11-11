@@ -14,7 +14,7 @@ type DataForChart = {
 }
 type DataCollection = { [allergen: string]: DataForChart }
 
-type DataSeries3 = { [key: string]: [number, number]; }
+type DataSeries3 = { [key: string]: [string, number, number]; }
 
 async function processHourlyJson(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`);
@@ -57,7 +57,7 @@ async function processHourlyJson(filename: Filepath) {
       //const zipped: Array<[string, number, number]> = [];
       const zipped: DataSeries3 = {};
       for (let index = 0; index < hourVals.length; ++index) {
-        zipped[addDateToTimeLabel(hourVals[index])] = [countsVals[index], miseryVals[index]];
+        zipped[addDateToTimeLabel(hourVals[index])] = [hourVals[index], countsVals[index], miseryVals[index]];
       }
 
       const normalizedData = {
@@ -113,7 +113,8 @@ function addDateToTimeLabel(hourLabel: string) {
   const parseText = now.toLocaleDateString() + ' ' + hourLabel;
   const parsedDate = new Date(parseText);
 
-  const offsetSecs = 360*60*1000;
+  const extraOffset = 50*1000;
+  const offsetSecs = 360*60*1000 + extraOffset;
   
   if (parsedDate > new Date(now.getTime() - offsetSecs)) {
     // if parsed date is more than right now, assume it was yesterday
