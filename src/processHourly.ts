@@ -55,7 +55,7 @@ async function processHourlyJson(filename: Filepath) {
         return;
       }
       //const zipped: Array<[string, number, number]> = [];
-      const zipped: DataSeries3 = {};
+      const zipped: Array<DataSeries3> = {};
       for (let index = 0; index < hourVals.length; ++index) {
         zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
       }
