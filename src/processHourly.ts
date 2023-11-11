@@ -14,7 +14,7 @@ type DataForChart = {
 }
 type DataCollection = { [allergen: string]: DataForChart }
 
-type DataSeries3 = { [key: string]: Array<[number, number]>; }
+type DataSeries3 = { [key: string]: [number, number]; }
 
 async function processHourlyJson(filename: Filepath) {
   console.log(`INFO: Opening ${filename}`);
@@ -55,9 +55,9 @@ async function processHourlyJson(filename: Filepath) {
         return;
       }
       //const zipped: Array<[string, number, number]> = [];
-      const zipped: Array<DataSeries3> = {};
+      const zipped: DataSeries3 = {};
       for (let index = 0; index < hourVals.length; ++index) {
-        zipped.push([hourVals[index], countsVals[index], miseryVals[index]]);
+        zipped[hourVals[index]] = [countsVals[index], miseryVals[index]];
       }
 
       const normalizedData = {
