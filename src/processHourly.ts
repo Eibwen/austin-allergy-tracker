@@ -114,9 +114,9 @@ function addDateToTimeLabel(hourLabel: string) {
   const parsedDate = new Date(parseText);
 
   const extraOffset = 50*1000;
-  const offsetSecs = 360*60*1000 + extraOffset;
+  const offsetSecs = 360*60*1000 - extraOffset;
   
-  if (parsedDate > new Date(now.getTime() - offsetSecs)) {
+  if (parsedDate > new Date(now.getTime() + offsetSecs)) {
     // if parsed date is more than right now, assume it was yesterday
     parsedDate.setDate(parsedDate.getDate() - 1);
   }
