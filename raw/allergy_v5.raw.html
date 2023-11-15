@@ -141,42 +141,7 @@ document.write(`
 
 var options = { month: 'short', day: 'numeric' };
 
-var aryFall_Elm = [
-{ y: new Date('2023/10/16').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/10/17').toLocaleDateString('en-US', options), a: 61 }, 
-{ y: new Date('2023/10/18').toLocaleDateString('en-US', options), a: 70 }, 
-{ y: new Date('2023/10/19').toLocaleDateString('en-US', options), a: 97 }, 
-{ y: new Date('2023/10/20').toLocaleDateString('en-US', options), a: 26 }, 
-{ y: new Date('2023/10/21').toLocaleDateString('en-US', options), a: 9 }, 
-{ y: new Date('2023/10/22').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/10/23').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/10/24').toLocaleDateString('en-US', options), a: 18 }, 
-{ y: new Date('2023/10/25').toLocaleDateString('en-US', options), a: 9 }, 
-{ y: new Date('2023/10/26').toLocaleDateString('en-US', options), a: 228 }, 
-{ y: new Date('2023/10/27').toLocaleDateString('en-US', options), a: 184 }, 
-{ y: new Date('2023/10/28').toLocaleDateString('en-US', options), a: 61 }, 
-{ y: new Date('2023/10/29').toLocaleDateString('en-US', options), a: 35 }, 
-{ y: new Date('2023/10/30').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/10/31').toLocaleDateString('en-US', options), a: 123 }, 
-{ y: new Date('2023/11/01').toLocaleDateString('en-US', options), a: 18 }, 
-{ y: new Date('2023/11/02').toLocaleDateString('en-US', options), a: 9 }, 
-{ y: new Date('2023/11/03').toLocaleDateString('en-US', options), a: 26 }, 
-{ y: new Date('2023/11/04').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/11/05').toLocaleDateString('en-US', options), a: 79 }, 
-{ y: new Date('2023/11/06').toLocaleDateString('en-US', options), a: 44 }, 
-{ y: new Date('2023/11/07').toLocaleDateString('en-US', options), a: 35 }, 
-{ y: new Date('2023/11/08').toLocaleDateString('en-US', options), a: 53 }, 
-{ y: new Date('2023/11/09').toLocaleDateString('en-US', options), a: 18 }, 
-{ y: new Date('2023/11/10').toLocaleDateString('en-US', options), a: 18 }, 
-{ y: new Date('2023/11/11').toLocaleDateString('en-US', options), a: 9 }, 
-{ y: new Date('2023/11/12').toLocaleDateString('en-US', options), a: 9 }, 
-{ y: new Date('2023/11/13').toLocaleDateString('en-US', options), a: 18 }, 
-{ y: new Date('2023/11/14').toLocaleDateString('en-US', options), a: 9 } 
-
-]; 
-
 var aryMold = [
-{ y: new Date('2023/10/16').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2023/10/17').toLocaleDateString('en-US', options), a: 772 }, 
 { y: new Date('2023/10/18').toLocaleDateString('en-US', options), a: 877 }, 
 { y: new Date('2023/10/19').toLocaleDateString('en-US', options), a: 693 }, 
@@ -205,7 +170,8 @@ var aryMold = [
 { y: new Date('2023/11/11').toLocaleDateString('en-US', options), a: 8222 }, 
 { y: new Date('2023/11/12').toLocaleDateString('en-US', options), a: 7143 }, 
 { y: new Date('2023/11/13').toLocaleDateString('en-US', options), a: 3501 }, 
-{ y: new Date('2023/11/14').toLocaleDateString('en-US', options), a: 2106 } 
+{ y: new Date('2023/11/14').toLocaleDateString('en-US', options), a: 2106 }, 
+{ y: new Date('2023/11/15').toLocaleDateString('en-US', options), a: 1079 } 
 
 ]; 
 
@@ -214,18 +180,9 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content" data-runtime="2023/11/14 23:55:01">November 14, 2023</h3>
+<h3 class="allergy_content" data-runtime="2023/11/15 06:20:01">November 15, 2023</h3>
 <p class="allergy_content">Rainfall may affect the ability to collect pollen data. Click the (+) symbol to show charted data from the past 30 days.</p>
 
-<div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Fall Elm - Low</div><div class="plusecks"><img id="Fall_Elm" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Fall_Elm', aryFall_Elm);"  /></div>
-	</div>
-	<div id="Fall_Elm_block" class="peek_a_block">
-		<div id="Fall_Elm"></div>
-		<div class="allergy_desc">No description</div>
-	</div>
-</div>
 <div class="allergy_block">
 	<div class="block_title Low">
 		<div class="allergen_value">Mold - Low</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
