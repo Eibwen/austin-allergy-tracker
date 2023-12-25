@@ -141,42 +141,7 @@ document.write(`
 
 var options = { month: 'short', day: 'numeric' };
 
-var aryCedar = [
-{ y: new Date('2023/11/25').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/11/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/11/27').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/11/28').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/11/29').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/11/30').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/12/01').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/12/02').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/12/03').toLocaleDateString('en-US', options), a: 88 }, 
-{ y: new Date('2023/12/04').toLocaleDateString('en-US', options), a: 70 }, 
-{ y: new Date('2023/12/05').toLocaleDateString('en-US', options), a: 53 }, 
-{ y: new Date('2023/12/06').toLocaleDateString('en-US', options), a: 26 }, 
-{ y: new Date('2023/12/07').toLocaleDateString('en-US', options), a: 88 }, 
-{ y: new Date('2023/12/08').toLocaleDateString('en-US', options), a: 132 }, 
-{ y: new Date('2023/12/09').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/12/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/12/11').toLocaleDateString('en-US', options), a: 44 }, 
-{ y: new Date('2023/12/12').toLocaleDateString('en-US', options), a: 70 }, 
-{ y: new Date('2023/12/13').toLocaleDateString('en-US', options), a: 79 }, 
-{ y: new Date('2023/12/14').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2023/12/15').toLocaleDateString('en-US', options), a: 114 }, 
-{ y: new Date('2023/12/16').toLocaleDateString('en-US', options), a: 175 }, 
-{ y: new Date('2023/12/17').toLocaleDateString('en-US', options), a: 175 }, 
-{ y: new Date('2023/12/18').toLocaleDateString('en-US', options), a: 2703 }, 
-{ y: new Date('2023/12/19').toLocaleDateString('en-US', options), a: 1079 }, 
-{ y: new Date('2023/12/20').toLocaleDateString('en-US', options), a: 140 }, 
-{ y: new Date('2023/12/21').toLocaleDateString('en-US', options), a: 175 }, 
-{ y: new Date('2023/12/22').toLocaleDateString('en-US', options), a: 167 }, 
-{ y: new Date('2023/12/23').toLocaleDateString('en-US', options), a: 158 }, 
-{ y: new Date('2023/12/24').toLocaleDateString('en-US', options), a: 342 } 
-
-]; 
-
 var aryMold = [
-{ y: new Date('2023/11/25').toLocaleDateString('en-US', options), a: 1729 }, 
 { y: new Date('2023/11/26').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2023/11/27').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2023/11/28').toLocaleDateString('en-US', options), a: 26 }, 
@@ -205,7 +170,8 @@ var aryMold = [
 { y: new Date('2023/12/21').toLocaleDateString('en-US', options), a: 17558 }, 
 { y: new Date('2023/12/22').toLocaleDateString('en-US', options), a: 17918 }, 
 { y: new Date('2023/12/23').toLocaleDateString('en-US', options), a: 14742 }, 
-{ y: new Date('2023/12/24').toLocaleDateString('en-US', options), a: 8371 } 
+{ y: new Date('2023/12/24').toLocaleDateString('en-US', options), a: 8371 }, 
+{ y: new Date('2023/12/25').toLocaleDateString('en-US', options), a: 53 } 
 
 ]; 
 
@@ -214,18 +180,9 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content" data-runtime="2023/12/24 23:55:01">December 24, 2023</h3>
+<h3 class="allergy_content" data-runtime="2023/12/25 06:20:01">December 25, 2023</h3>
 <p class="allergy_content">Rainfall may affect the ability to collect pollen data. Click the (+) symbol to show charted data from the past 30 days.</p>
 
-<div class="allergy_block">
-	<div class="block_title Low">
-		<div class="allergen_value">Cedar - Low</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
-	</div>
-	<div id="Cedar_block" class="peek_a_block">
-		<div id="Cedar"></div>
-		<div class="allergy_desc">Cedar pollen causes allergic reactions in many Central Texans. Counts typically peak in January to early February.</div>
-	</div>
-</div>
 <div class="allergy_block">
 	<div class="block_title Low">
 		<div class="allergen_value">Mold - Low</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
