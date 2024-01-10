@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryCedar = [
-{ y: new Date('2023/12/11').toLocaleDateString('en-US', options), a: 44 }, 
 { y: new Date('2023/12/12').toLocaleDateString('en-US', options), a: 70 }, 
 { y: new Date('2023/12/13').toLocaleDateString('en-US', options), a: 79 }, 
 { y: new Date('2023/12/14').toLocaleDateString('en-US', options), a: 0 }, 
@@ -171,12 +170,12 @@ var aryCedar = [
 { y: new Date('2024/01/06').toLocaleDateString('en-US', options), a: 4291 }, 
 { y: new Date('2024/01/07').toLocaleDateString('en-US', options), a: 3501 }, 
 { y: new Date('2024/01/08').toLocaleDateString('en-US', options), a: 781 }, 
-{ y: new Date('2024/01/09').toLocaleDateString('en-US', options), a: 1825 } 
+{ y: new Date('2024/01/09').toLocaleDateString('en-US', options), a: 1825 }, 
+{ y: new Date('2024/01/10').toLocaleDateString('en-US', options), a: 105 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2023/12/11').toLocaleDateString('en-US', options), a: 22042 }, 
 { y: new Date('2023/12/12').toLocaleDateString('en-US', options), a: 40373 }, 
 { y: new Date('2023/12/13').toLocaleDateString('en-US', options), a: 34406 }, 
 { y: new Date('2023/12/14').toLocaleDateString('en-US', options), a: 15242 }, 
@@ -205,7 +204,8 @@ var aryMold = [
 { y: new Date('2024/01/06').toLocaleDateString('en-US', options), a: 12574 }, 
 { y: new Date('2024/01/07').toLocaleDateString('en-US', options), a: 10275 }, 
 { y: new Date('2024/01/08').toLocaleDateString('en-US', options), a: 6581 }, 
-{ y: new Date('2024/01/09').toLocaleDateString('en-US', options), a: 13908 } 
+{ y: new Date('2024/01/09').toLocaleDateString('en-US', options), a: 13908 }, 
+{ y: new Date('2024/01/10').toLocaleDateString('en-US', options), a: 10679 } 
 
 ]; 
 
@@ -214,12 +214,12 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content" data-runtime="2024/01/09 23:55:01">January 9, 2024</h3>
+<h3 class="allergy_content" data-runtime="2024/01/10 06:25:01">January 10, 2024</h3>
 <p class="allergy_content">Rainfall may affect the ability to collect pollen data. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Medium">
-		<div class="allergen_value">Cedar - Medium</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
+	<div class="block_title Low">
+		<div class="allergen_value">Cedar - Low</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
 	</div>
 	<div id="Cedar_block" class="peek_a_block">
 		<div id="Cedar"></div>
