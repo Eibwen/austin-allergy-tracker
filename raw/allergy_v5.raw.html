@@ -142,7 +142,6 @@ document.write(`
 var options = { month: 'short', day: 'numeric' };
 
 var aryMold = [
-{ y: new Date('2023/12/14').toLocaleDateString('en-US', options), a: 15242 }, 
 { y: new Date('2023/12/15').toLocaleDateString('en-US', options), a: 17453 }, 
 { y: new Date('2023/12/16').toLocaleDateString('en-US', options), a: 14627 }, 
 { y: new Date('2023/12/17').toLocaleDateString('en-US', options), a: 6730 }, 
@@ -171,7 +170,8 @@ var aryMold = [
 { y: new Date('2024/01/09').toLocaleDateString('en-US', options), a: 13908 }, 
 { y: new Date('2024/01/10').toLocaleDateString('en-US', options), a: 10679 }, 
 { y: new Date('2024/01/11').toLocaleDateString('en-US', options), a: 60440 }, 
-{ y: new Date('2024/01/12').toLocaleDateString('en-US', options), a: 29562 } 
+{ y: new Date('2024/01/12').toLocaleDateString('en-US', options), a: 29562 }, 
+{ y: new Date('2024/01/13').toLocaleDateString('en-US', options), a: 14908 } 
 
 ]; 
 
@@ -180,12 +180,12 @@ var aryMold = [
 </script>
 
 
-<h3 class="allergy_content" data-runtime="2024/01/12 23:55:01">January 12, 2024</h3>
+<h3 class="allergy_content" data-runtime="2024/01/13 06:20:01">January 13, 2024</h3>
 <p class="allergy_content">Rainfall may affect the ability to collect pollen data. Click the (+) symbol to show charted data from the past 30 days.</p>
 
 <div class="allergy_block">
-	<div class="block_title Medium">
-		<div class="allergen_value">Mold - Medium</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
+	<div class="block_title Low">
+		<div class="allergen_value">Mold - Low</div><div class="plusecks"><img id="Mold" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Mold', aryMold);"  /></div>
 	</div>
 	<div id="Mold_block" class="peek_a_block">
 		<div id="Mold"></div>
