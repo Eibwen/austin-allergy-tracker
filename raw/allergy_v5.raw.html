@@ -141,42 +141,7 @@ document.write(`
 
 var options = { month: 'short', day: 'numeric' };
 
-var aryCedar = [
-{ y: new Date('2024/02/04').toLocaleDateString('en-US', options), a: 641 }, 
-{ y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 88 }, 
-{ y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 61 }, 
-{ y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 202 }, 
-{ y: new Date('2024/02/08').toLocaleDateString('en-US', options), a: 263 }, 
-{ y: new Date('2024/02/09').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/10').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/11').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/12').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/13').toLocaleDateString('en-US', options), a: 61 }, 
-{ y: new Date('2024/02/14').toLocaleDateString('en-US', options), a: 465 }, 
-{ y: new Date('2024/02/15').toLocaleDateString('en-US', options), a: 3668 }, 
-{ y: new Date('2024/02/16').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/17').toLocaleDateString('en-US', options), a: 886 }, 
-{ y: new Date('2024/02/18').toLocaleDateString('en-US', options), a: 123 }, 
-{ y: new Date('2024/02/19').toLocaleDateString('en-US', options), a: 9 }, 
-{ y: new Date('2024/02/20').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/21').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/22').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/23').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/24').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/25').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/26').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/02/27').toLocaleDateString('en-US', options), a: 562 }, 
-{ y: new Date('2024/02/28').toLocaleDateString('en-US', options), a: 623 }, 
-{ y: new Date('2024/02/29').toLocaleDateString('en-US', options), a: 377 }, 
-{ y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 105 }, 
-{ y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 211 }, 
-{ y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 483 }, 
-{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 395 } 
-
-]; 
-
 var aryElm = [
-{ y: new Date('2024/02/04').toLocaleDateString('en-US', options), a: 105 }, 
 { y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 88 }, 
 { y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 26 }, 
 { y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 140 }, 
@@ -205,12 +170,46 @@ var aryElm = [
 { y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 105 }, 
 { y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 377 }, 
-{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 799 } 
+{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 799 }, 
+{ y: new Date('2024/03/05').toLocaleDateString('en-US', options), a: 1509 } 
+
+]; 
+
+var aryCedar = [
+{ y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 88 }, 
+{ y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 61 }, 
+{ y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 202 }, 
+{ y: new Date('2024/02/08').toLocaleDateString('en-US', options), a: 263 }, 
+{ y: new Date('2024/02/09').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/10').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/11').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/12').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/13').toLocaleDateString('en-US', options), a: 61 }, 
+{ y: new Date('2024/02/14').toLocaleDateString('en-US', options), a: 465 }, 
+{ y: new Date('2024/02/15').toLocaleDateString('en-US', options), a: 3668 }, 
+{ y: new Date('2024/02/16').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/17').toLocaleDateString('en-US', options), a: 886 }, 
+{ y: new Date('2024/02/18').toLocaleDateString('en-US', options), a: 123 }, 
+{ y: new Date('2024/02/19').toLocaleDateString('en-US', options), a: 9 }, 
+{ y: new Date('2024/02/20').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/21').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/22').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/23').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/24').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/25').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/26').toLocaleDateString('en-US', options), a: 0 }, 
+{ y: new Date('2024/02/27').toLocaleDateString('en-US', options), a: 562 }, 
+{ y: new Date('2024/02/28').toLocaleDateString('en-US', options), a: 623 }, 
+{ y: new Date('2024/02/29').toLocaleDateString('en-US', options), a: 377 }, 
+{ y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 105 }, 
+{ y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 211 }, 
+{ y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 483 }, 
+{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 395 }, 
+{ y: new Date('2024/03/05').toLocaleDateString('en-US', options), a: 553 } 
 
 ]; 
 
 var aryMold = [
-{ y: new Date('2024/02/04').toLocaleDateString('en-US', options), a: 18585 }, 
 { y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 16830 }, 
 { y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 14250 }, 
 { y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 21130 }, 
@@ -239,12 +238,12 @@ var aryMold = [
 { y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 13320 }, 
 { y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 25034 }, 
 { y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 17488 }, 
-{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 22305 } 
+{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 22305 }, 
+{ y: new Date('2024/03/05').toLocaleDateString('en-US', options), a: 34836 } 
 
 ]; 
 
 var aryHickory = [
-{ y: new Date('2024/02/04').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 0 }, 
@@ -273,12 +272,12 @@ var aryHickory = [
 { y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 18 }, 
-{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 9 } 
+{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 9 }, 
+{ y: new Date('2024/03/05').toLocaleDateString('en-US', options), a: 35 } 
 
 ]; 
 
 var aryMulberry = [
-{ y: new Date('2024/02/04').toLocaleDateString('en-US', options), a: 18 }, 
 { y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 9 }, 
 { y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 0 }, 
@@ -307,12 +306,12 @@ var aryMulberry = [
 { y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 9 }, 
 { y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 26 }, 
 { y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 0 }, 
-{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 35 } 
+{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 35 }, 
+{ y: new Date('2024/03/05').toLocaleDateString('en-US', options), a: 70 } 
 
 ]; 
 
 var aryOak = [
-{ y: new Date('2024/02/04').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/05').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/06').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/02/07').toLocaleDateString('en-US', options), a: 0 }, 
@@ -341,7 +340,8 @@ var aryOak = [
 { y: new Date('2024/03/01').toLocaleDateString('en-US', options), a: 0 }, 
 { y: new Date('2024/03/02').toLocaleDateString('en-US', options), a: 9 }, 
 { y: new Date('2024/03/03').toLocaleDateString('en-US', options), a: 70 }, 
-{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 18 } 
+{ y: new Date('2024/03/04').toLocaleDateString('en-US', options), a: 18 }, 
+{ y: new Date('2024/03/05').toLocaleDateString('en-US', options), a: 26 } 
 
 ]; 
 
@@ -350,9 +350,18 @@ var aryOak = [
 </script>
 
 
-<h3 class="allergy_content" data-runtime="2024/03/04 23:55:01">March 4, 2024</h3>
+<h3 class="allergy_content" data-runtime="2024/03/05 06:20:01">March 5, 2024</h3>
 <p class="allergy_content">Rainfall may affect the ability to collect pollen data. Click the (+) symbol to show charted data from the past 30 days.</p>
 
+<div class="allergy_block">
+	<div class="block_title High">
+		<div class="allergen_value">Elm - High</div><div class="plusecks"><img id="Elm" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Elm', aryElm);"  /></div>
+	</div>
+	<div id="Elm_block" class="peek_a_block">
+		<div id="Elm"></div>
+		<div class="allergy_desc">Counts peak end of February - beginning of March</div>
+	</div>
+</div>
 <div class="allergy_block">
 	<div class="block_title Medium">
 		<div class="allergen_value">Cedar - Medium</div><div class="plusecks"><img id="Cedar" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Cedar', aryCedar);"  /></div>
@@ -360,15 +369,6 @@ var aryOak = [
 	<div id="Cedar_block" class="peek_a_block">
 		<div id="Cedar"></div>
 		<div class="allergy_desc">Cedar pollen causes allergic reactions in many Central Texans. Counts typically peak in January to early February.</div>
-	</div>
-</div>
-<div class="allergy_block">
-	<div class="block_title Medium">
-		<div class="allergen_value">Elm - Medium</div><div class="plusecks"><img id="Elm" src="https://media.psg.nexstardigital.net/kxan/weather/allergy/plus.svg" onclick="chartToggle('Elm', aryElm);"  /></div>
-	</div>
-	<div id="Elm_block" class="peek_a_block">
-		<div id="Elm"></div>
-		<div class="allergy_desc">Counts peak end of February - beginning of March</div>
 	</div>
 </div>
 <div class="allergy_block">
