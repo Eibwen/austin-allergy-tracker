@@ -4,10 +4,12 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Cedar: 430** (2024/03/10)  [week high: 553, month: 3668]
-- **Elm: 509** (2024/03/10)  [week high: 1509, month: 1509]
-- **Mold: 10433** (2024/03/10)  [week high: 34836, month: 35661]
-- **Mulberry: 26** (2024/03/10)  [week high: 70, month: 290]
+- **Cedar: 649** (2024/03/11)  [week high: 649, month: 3668]
+- **Elm: 684** (2024/03/11)  [week high: 1509, month: 1509]
+- **Hickory: 70** (2024/03/11)  [week high: 70, month: 70]
+- **Mold: 19541** (2024/03/11)  [week high: 34836, month: 35661]
+- **Mulberry: 53** (2024/03/11)  [week high: 70, month: 290]
+- **Oak: 9** (2024/03/11)  [week high: 79, month: 79]
 <!-- END INJECT FORECAST -->
 
 ## Technique
