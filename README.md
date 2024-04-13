@@ -4,10 +4,9 @@ Keep history of allergies in Austin, TX using github Actions (sourced from KXAN'
 
 ## Current forecast
 <!-- INJECT FORECAST -->
-- **Mulberry: 333** (2024/04/12)  [week high: 1211, month: 1781]
-- **Ash: 9** (2024/04/12)  [week high: 26, month: 53]
-- **Hickory: 97** (2024/04/12)  [week high: 140, month: 140]
-- **Mold: 2431** (2024/04/12)  [week high: 8143, month: 55728]
+- **Hickory: 263** (2024/04/13)  [week high: 263, month: 263]
+- **Mulberry: 430** (2024/04/13)  [week high: 518, month: 1781]
+- **Mold: 7090** (2024/04/13)  [week high: 8143, month: 55728]
 <!-- END INJECT FORECAST -->
 
 ## Technique
